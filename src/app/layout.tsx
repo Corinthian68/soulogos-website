@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Soulogos - Give Your NPCs a Voice. Give Them a Soul.',
+  title: 'Soulogos by Cognition & Chaos - Give Your NPCs a Voice',
   description:
     'Soulogos is a Discord bot that brings tabletop RPG NPCs to life with AI-generated voices, deep character memory, and natural conversation. Built for Dungeon Masters. Powered by Claude AI and ElevenLabs.',
   metadataBase: new URL('https://soulogos.com'),
   openGraph: {
-    title: 'Soulogos - Give Your NPCs a Voice. Give Them a Soul.',
+    title: 'Soulogos by Cognition & Chaos - Give Your NPCs a Voice',
     description:
-      'The Discord bot that voices your tabletop NPCs - powered by AI and brought to life with real speech.',
+      'The Discord bot that voices your tabletop NPCs. Powered by AI and brought to life with real speech.',
     url: 'https://soulogos.com',
-    siteName: 'Soulogos',
+    siteName: 'Soulogos by Cognition & Chaos',
     type: 'website',
   },
   twitter: {

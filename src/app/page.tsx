@@ -366,6 +366,12 @@ export default function Home() {
             body="The Authoring Console gives you a live dashboard for managing NPCs, cues, and session flow. Mute NPCs, override responses, manage group scenes. You are always in command."
             delay={0.6}
           />
+          <FeatureCard
+            icon={<ShieldIcon />}
+            title="Self-Hosted. Yours to Own."
+            body="No subscription. No SaaS. Soulogos runs on your server, under your control. One-time license, self-deployed. Your campaign data stays on your hardware."
+            delay={0.7}
+          />
         </div>
       </section>
 
@@ -543,9 +549,14 @@ export default function Home() {
           <div>
             <div className="mb-4 flex items-center gap-3">
               <Image src="/logo-full.png" alt="Soulogos Lantern Logo" width={32} height={40} className="object-contain" />
-              <span className="font-display text-parchment tracking-wide text-xl [text-shadow:0_0_20px_rgba(201,168,76,0.3)]">
-                Soulogos
-              </span>
+              <div>
+                <span className="font-display text-parchment tracking-wide text-xl block [text-shadow:0_0_20px_rgba(201,168,76,0.3)]">
+                  Soulogos
+                </span>
+                <span className="font-ui text-muted/60 text-xs tracking-widest uppercase">
+                  by Cognition &amp; Chaos
+                </span>
+              </div>
             </div>
             <p className="font-body text-muted text-base italic mb-1">
               Give your NPCs a voice. Give them a soul.
@@ -580,7 +591,7 @@ export default function Home() {
               </a>
             </div>
             <p className="font-ui text-muted/30 text-xs tracking-wider">
-              © {new Date().getFullYear()} Soulogos. All rights reserved.
+              © {new Date().getFullYear()} Soulogos by Cognition &amp; Chaos. All rights reserved.
             </p>
           </div>
         </div>
