@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ─── Tailwind v4 Theme Tokens ─────────────────────────────────────────── */
+@theme inline {
+  /* Colors */
+  --color-void: #0A0D14;
+  --color-navy: #0F1520;
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8C97A;
+  --color-wisp: #D4E8FF;
+  --color-parchment: #EDE8DC;
+  --color-muted: #8B8070;
+  --color-shadow: #050709;
+  --color-discord: #5865F2;
+
+  /* Fonts */
+  --font-display: 'Cinzel Decorative', serif;
+  --font-ui: 'Cinzel', serif;
+  --font-body: 'EB Garamond', serif;
+
+  /* Shadows */
+  --shadow-gold-sm: 0 0 10px 2px rgba(201, 168, 76, 0.2);
+  --shadow-gold-md: 0 0 20px 6px rgba(201, 168, 76, 0.3);
+  --shadow-gold-lg: 0 0 40px 12px rgba(201, 168, 76, 0.25);
+  --shadow-wisp-glow: 0 0 20px 6px rgba(212, 232, 255, 0.4);
+
+  /* Animations */
+  --animate-wisp-pulse: wisp-pulse 3s ease-in-out infinite;
+  --animate-wisp-float: wisp-float 4s ease-in-out infinite;
+  --animate-gold-pulse: gold-border-pulse 2.5s ease-in-out infinite;
+  --animate-mist-rise: mist-rise 6s ease-in-out infinite;
+  --animate-sigil-rotate: sigil-rotate 90s linear infinite;
+  --animate-fade-up: fade-up 0.6s ease-out forwards;
+}
+
+/* ─── Base Reset ────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0D14;
+  color: #EDE8DC;
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  animation: grain-drift 8s steps(10) infinite;
+}
+
+/* ─── Keyframe Animations ───────────────────────────────────────────────── */
+
+@keyframes wisp-pulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); filter: blur(0px); }
+  50% { opacity: 1; transform: scale(1.12); filter: blur(0.5px); }
+}
+
+@keyframes wisp-float {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-4px) scale(1.05); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+@keyframes grain-drift {
+  0% { background-position: 0 0; }
+  10% { background-position: -5% -10%; }
+  20% { background-position: -15% 5%; }
+  30% { background-position: 7% -25%; }
+  40% { background-position: -5% 25%; }
+  50% { background-position: -15% 10%; }
+  60% { background-position: 15% 0%; }
+  70% { background-position: 0% 15%; }
+  80% { background-position: 3% 35%; }
+  90% { background-position: -10% 10%; }
+  100% { background-position: 0 0; }
+}
+
+@keyframes gold-border-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0), 0 0 10px 0 rgba(201, 168, 76, 0); }
+  50% { box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.15), 0 0 20px 4px rgba(201, 168, 76, 0.1); }
+}
+
+@keyframes mist-rise {
+  0% { transform: translateY(0) scaleX(1); opacity: 0.6; }
+  50% { transform: translateY(-20px) scaleX(1.05); opacity: 0.8; }
+  100% { transform: translateY(0) scaleX(1); opacity: 0.6; }
+}
+
+@keyframes sigil-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Utility Classes ───────────────────────────────────────────────────── */
+
+.font-display { font-family: 'Cinzel Decorative', serif; }
+.font-ui      { font-family: 'Cinzel', serif; }
+.font-body    { font-family: 'EB Garamond', serif; }
+
+.overline {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+
+.section-heading {
+  font-family: 'Cinzel Decorative', serif;
+  color: #EDE8DC;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.section-subheading {
+  font-family: 'Cinzel', serif;
+  color: #8B8070;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C 20%, #C9A84C 80%, transparent);
+  opacity: 0.4;
+  transform-origin: left;
+}
+
+.wisp-animate {
+  animation: wisp-pulse 3s ease-in-out infinite, wisp-float 4s ease-in-out infinite;
+}
+
+.gold-pulse-btn {
+  animation: gold-border-pulse 2.5s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0D14; }
+::-webkit-scrollbar-thumb { background: #C9A84C; opacity: 0.4; border-radius: 3px; }
