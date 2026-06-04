@@ -193,7 +193,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-3xl w-full">
           <div className="overline mb-4 animate-[fade-up_0.6s_ease-out_forwards]">
-            COMING SOON : v0.5 IN ACTIVE DEVELOPMENT
+            COMING SOON, v0.5 IN ACTIVE DEVELOPMENT
           </div>
 
           <h1 className="font-display text-parchment leading-tight mb-6 text-[clamp(2.4rem,6vw,5rem)] [text-shadow:0_0_60px_rgba(201,168,76,0.15)] animate-[fade-up_0.6s_ease-out_forwards] delay-100">
@@ -206,7 +206,7 @@ export default function Home() {
           <p className="font-body text-muted max-w-xl mb-10 text-[clamp(1.1rem,2vw,1.25rem)] leading-[1.8] animate-[fade-up_0.6s_ease-out_forwards] delay-200">
             Soulogos is a Discord bot that brings your tabletop RPG NPCs to life
             with real AI-generated voices, deep character memory, and natural conversation.
-            Your players talk. Your NPCs answer : in character, in voice, every time.
+            Your players talk. Your NPCs answer, in character, in voice, every time.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 mb-10 animate-[fade-up_0.6s_ease-out_forwards] delay-300">
@@ -250,7 +250,7 @@ export default function Home() {
               <p className="font-body text-muted text-lg leading-relaxed">
                 You're tracking initiative, managing the map, handling rules questions,
                 and somehow you're also supposed to voice the innkeeper, the merchant,
-                the villain, and the captain of the guard : all with distinct personalities,
+                the villain, and the captain of the guard, all with distinct personalities,
                 consistent backstories, and memorable delivery.
               </p>
               <p className="font-body text-muted text-lg leading-relaxed mt-4 italic">
@@ -266,7 +266,7 @@ export default function Home() {
                 Soulogos gives every NPC their own voice.
               </h3>
               <p className="font-body text-muted text-lg leading-relaxed">
-                Each NPC is a &quot;Soul&quot; : a fully authored character with a unique AI voice,
+                Each NPC is a &quot;Soul&quot;, a fully authored character with a unique AI voice,
                 a deep personality, and memory of what's happened in your campaign.
               </p>
               <p className="font-body text-muted text-lg leading-relaxed mt-4">
@@ -298,21 +298,21 @@ export default function Home() {
               number="I"
               title="Author a Soul"
               icon={<QuillIcon />}
-              body="You write the character. Their history, their voice, their secrets, their beliefs. The Authoring Console turns that into a living AI persona : consistent, deep, and distinctly theirs. Every Soul is a fully realized character, not a template."
+              body="You write the character. Their history, their voice, their secrets, their beliefs. The Authoring Console turns that into a living AI persona, consistent, deep, and distinctly theirs. Every Soul is a fully realized character, not a template."
               delay={0.1}
             />
             <Step
               number="II"
               title="Assign a Voice"
               icon={<VoiceIcon />}
-              body="Choose from a library of AI voices powered by ElevenLabs. Each NPC gets their own voice ID : tuned with personality-specific settings for pacing, expression, and emotional weight. Your innkeeper doesn't sound like your villain."
+              body="Choose from a library of AI voices powered by ElevenLabs. Each NPC gets their own voice ID, tuned with personality-specific settings for pacing, expression, and emotional weight. Your innkeeper doesn't sound like your villain."
               delay={0.2}
             />
             <Step
               number="III"
               title="Run the Session"
               icon={<D20Icon />}
-              body="Your players speak in Discord. The NPC hears them, understands context, and responds : out loud, in character, in real time. DM tools let you control who speaks, when, and how. Cue your ambient audio. Set the scene. Run the cast."
+              body="Your players speak in Discord. The NPC hears them, understands context, and responds, out loud, in character, in real time. DM tools let you control who speaks, when, and how. Cue your ambient audio. Set the scene. Run the cast."
               delay={0.3}
             />
           </div>
@@ -333,7 +333,7 @@ export default function Home() {
           <FeatureCard
             icon={<SoulIcon />}
             title="Living Souls"
-            body="Each NPC is authored as a Soul : a deep character bible covering history, beliefs, contradictions, relationships, and secrets. The AI knows what your NPC knows, and nothing more."
+            body="Each NPC is authored as a Soul, a deep character bible covering history, beliefs, contradictions, relationships, and secrets. The AI knows what your NPC knows, and nothing more."
             delay={0.1}
           />
           <FeatureCard
@@ -345,19 +345,19 @@ export default function Home() {
           <FeatureCard
             icon={<DiscordBadgeIcon />}
             title="Players Can Speak"
-            body="Real-time speech-to-text lets your players talk naturally in Discord voice channels. NPCs hear them, process context, and respond in character : no typing required."
+            body="Real-time speech-to-text lets your players talk naturally in Discord voice channels. NPCs hear them, process context, and respond in character, no typing required."
             delay={0.3}
           />
           <FeatureCard
             icon={<ShieldIcon />}
             title="Multi-NPC Group Scenes"
-            body="Run group threads where multiple NPCs are active simultaneously. Each NPC decides independently whether to respond. The scene unfolds naturally : no puppeteering required."
+            body="Run group threads where multiple NPCs are active simultaneously. Each NPC decides independently whether to respond. The scene unfolds naturally, no puppeteering required."
             delay={0.4}
           />
           <FeatureCard
             icon={<D20Icon />}
             title="Live Ambient Audio"
-            body="Syrinscape integration streams live atmospheric audio directly into Discord alongside NPC voices. Combat music, tavern ambience, dungeon dread : cued from a single board during play."
+            body="Syrinscape integration streams live atmospheric audio directly into Discord alongside NPC voices. Combat music, tavern ambience, dungeon dread, cued from a single board during play."
             delay={0.5}
           />
           <FeatureCard
@@ -397,7 +397,7 @@ export default function Home() {
                   It's where Souls are born.
                 </p>
                 <p className="font-body text-muted text-lg leading-relaxed mb-6">
-                  Each NPC gets a Soul document : a deep character bible covering their history,
+                  Each NPC gets a Soul document, a deep character bible covering their history,
                   voice, beliefs, contradictions, and relationships. The Console lets you write,
                   edit, and deploy Souls directly to the bot without touching a config file.
                 </p>
@@ -431,7 +431,7 @@ export default function Home() {
           <div className="flex-1">
             <ScrollReveal delay={0.1}>
               <p className="font-body text-muted text-lg leading-relaxed mb-6">
-                Soulogos integrates live with Syrinscape : the gold standard for
+                Soulogos integrates live with Syrinscape, the gold standard for
                 tabletop RPG ambient audio.
               </p>
               <p className="font-body text-muted text-lg leading-relaxed mb-6">
@@ -475,7 +475,7 @@ export default function Home() {
             <AudienceCard
               subtitle="For the Community"
               title="Discord Server Owners"
-              body="Bring your community's world to life. Running a persistent world server? A roleplay community? A living campaign? Soulogos lets you deploy voiced, AI-driven NPCs into any Discord channel : characters your community can actually talk to."
+              body="Bring your community's world to life. Running a persistent world server? A roleplay community? A living campaign? Soulogos lets you deploy voiced, AI-driven NPCs into any Discord channel, characters your community can actually talk to."
               delay={0.2}
             />
           </div>
@@ -529,7 +529,7 @@ export default function Home() {
             <ScrollReveal delay={0.1}>
               <p className="font-body text-muted text-lg leading-relaxed max-w-md">
                 Soulogos is in active development. A self-hosted license is planned for late 2026
-                at a one-time price : no subscriptions. Early waitlist members get priority access
+                at a one-time price, no subscriptions. Early waitlist members get priority access
                 and founding-tier pricing.
               </p>
             </ScrollReveal>
@@ -544,7 +544,7 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────────────── */}
-      <footer className="border-t border-gold/10 px-8 md:px-16 py-12 text-left bg-[#050709]">
+      <footer className="border-t border-gold/10 px-8 md:px-16 pt-24 pb-12 text-left bg-[#050709]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
             <div className="mb-4 flex items-center gap-3">

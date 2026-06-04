@@ -222,42 +222,26 @@ export function DiscordIcon({ size = 20 }: { size?: number }) {
 // ─── Authoring Console Mockup ───────────────────────────────────────────────
 export function ConsoleMockup() {
   return (
-    <div className="w-full aspect-[16/10] max-w-2xl mx-auto rounded-lg border border-gold/30 bg-navy/80 shadow-[0_0_40px_rgba(201,168,76,0.1)] overflow-hidden flex flex-col">
-      <div className="h-8 border-b border-gold/20 flex items-center px-4 bg-void/50">
-        <div className="flex gap-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/50" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-          <div className="w-3 h-3 rounded-full bg-green-500/50" />
-        </div>
-      </div>
-      <div className="flex-1 flex items-center justify-center p-8">
-        <p className="font-ui text-gold/50 text-lg uppercase tracking-widest text-center">
-          Authoring Console<br/>
-          <span className="text-sm tracking-widest mt-2 block">Coming in public release</span>
-        </p>
-      </div>
-    </div>
+    <Image
+      src="/authoring-npc.png"
+      alt="Soulogos Authoring Console"
+      width={3829}
+      height={1424}
+      className="w-full h-auto max-w-2xl mx-auto rounded-lg border border-gold/30 shadow-[0_0_40px_rgba(201,168,76,0.1)]"
+    />
   )
 }
 
 // ─── Syrinscape Cue Board ───────────────────────────────────────────────────
 export function SyrinscapeCueBoard() {
   return (
-    <div className="w-full max-w-lg mx-auto bg-navy/80 rounded-lg border border-gold/20 p-6 shadow-[0_0_30px_rgba(201,168,76,0.05)]">
-      <p className="font-ui text-gold/60 text-sm uppercase tracking-widest text-center mb-6">Live Syrinscape Cue Board</p>
-      <div className="grid grid-cols-5 gap-3">
-        {Array.from({ length: 25 }).map((_, i) => {
-          let bgColor = 'bg-void/50 border-gold/10'
-          if (i === 12) bgColor = 'bg-red-900/40 border-red-500/40 shadow-[0_0_15px_rgba(239,68,68,0.2)]'
-          else if (i % 7 === 0) bgColor = 'bg-blue-900/30 border-blue-400/30'
-          else if (i % 5 === 0) bgColor = 'bg-gold/10 border-gold/30'
-
-          return (
-            <div key={i} className={`aspect-square rounded ${bgColor} border hover:bg-gold/20 hover:border-gold/50 transition-colors cursor-pointer`} />
-          )
-        })}
-      </div>
-    </div>
+    <Image
+      src="/syrinscape-builder.png"
+      alt="Soulogos Syrinscape cue board builder"
+      width={3835}
+      height={1432}
+      className="w-full h-auto max-w-2xl mx-auto rounded-lg border border-gold/30 shadow-[0_0_40px_rgba(201,168,76,0.1)]"
+    />
   )
 }
 
