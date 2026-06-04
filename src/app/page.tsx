@@ -11,6 +11,7 @@ import {
   DiscordIcon,
   ConsoleMockup,
   SyrinscapeCueBoard,
+  ScrollTracker,
 } from '@/components'
 
 // ─── Icon components ────────────────────────────────────────────────────────
@@ -165,11 +166,12 @@ export default function Home() {
   return (
     <>
       <Nav />
+      <ScrollTracker />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         id="hero"
-        className="relative min-h-screen flex flex-col items-start justify-center text-left px-8 md:px-16 pt-24 pb-20 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
+        className="relative min-h-screen flex flex-col justify-center text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-24 pb-20 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
       >
         {/* Full logo image from spec */}
         <div className="absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none hidden lg:flex items-center justify-end pr-16 opacity-80 mix-blend-screen translate-x-[10%]">
@@ -191,100 +193,104 @@ export default function Home() {
 
         <MistGradient />
 
-        <div className="relative z-10 max-w-3xl w-full">
-          <div className="overline mb-4 animate-[fade-up_0.6s_ease-out_forwards]">
-            COMING SOON, v0.5 IN ACTIVE DEVELOPMENT
+        <div className="max-w-7xl w-full mr-auto relative z-10">
+          <div className="max-w-3xl w-full">
+            <div className="overline mb-4 animate-[fade-up_0.6s_ease-out_forwards]">
+              COMING SOON, v0.5 IN ACTIVE DEVELOPMENT
+            </div>
+
+            <h1 className="font-display text-parchment leading-tight mb-6 text-[clamp(2.4rem,6vw,5rem)] [text-shadow:0_0_60px_rgba(201,168,76,0.15)] animate-[fade-up_0.6s_ease-out_forwards] delay-100">
+              Give Your NPCs<br />
+              <span className="text-[#E8C97A]">a Voice.</span>
+              <br />
+              Give Them a Soul.
+            </h1>
+
+            <p className="font-body text-muted max-w-xl mb-10 text-[clamp(1.1rem,2vw,1.25rem)] leading-[1.8] animate-[fade-up_0.6s_ease-out_forwards] delay-200">
+              Soulogos is a Discord bot that brings your tabletop RPG NPCs to life
+              with real AI-generated voices, deep character memory, and natural conversation.
+              Your players talk. Your NPCs answer, in character, in voice, every time.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-5 mb-10 animate-[fade-up_0.6s_ease-out_forwards] delay-300">
+              <a
+                href="#waitlist"
+                id="hero-join-waitlist-btn"
+                className="font-ui tracking-widest uppercase text-sm px-8 py-4 rounded-lg text-void font-semibold transition-all duration-300 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98] bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] shadow-[0_4px_24px_rgba(201,168,76,0.35)]"
+              >
+                Join the Waitlist
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="hero-discord-btn"
+                className="font-ui tracking-widest uppercase text-sm px-8 py-4 rounded-lg text-parchment border border-gold/40 transition-all duration-300 hover:border-gold hover:bg-gold/5 hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-3"
+              >
+                <DiscordIcon size={16} />
+                Join Our Discord
+              </a>
+            </div>
+
+            <p className="font-ui text-muted text-xs tracking-widest uppercase animate-[fade-up_0.6s_ease-out_forwards] delay-400">
+              Built for Dungeon Masters &nbsp;·&nbsp; Runs on Discord &nbsp;·&nbsp; v0.5 live with active campaigns
+            </p>
           </div>
-
-          <h1 className="font-display text-parchment leading-tight mb-6 text-[clamp(2.4rem,6vw,5rem)] [text-shadow:0_0_60px_rgba(201,168,76,0.15)] animate-[fade-up_0.6s_ease-out_forwards] delay-100">
-            Give Your NPCs<br />
-            <span className="text-[#E8C97A]">a Voice.</span>
-            <br />
-            Give Them a Soul.
-          </h1>
-
-          <p className="font-body text-muted max-w-xl mb-10 text-[clamp(1.1rem,2vw,1.25rem)] leading-[1.8] animate-[fade-up_0.6s_ease-out_forwards] delay-200">
-            Soulogos is a Discord bot that brings your tabletop RPG NPCs to life
-            with real AI-generated voices, deep character memory, and natural conversation.
-            Your players talk. Your NPCs answer, in character, in voice, every time.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-5 mb-10 animate-[fade-up_0.6s_ease-out_forwards] delay-300">
-            <a
-              href="#waitlist"
-              id="hero-join-waitlist-btn"
-              className="font-ui tracking-widest uppercase text-sm px-8 py-4 rounded-lg text-void font-semibold transition-all duration-300 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98] bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] shadow-[0_4px_24px_rgba(201,168,76,0.35)]"
-            >
-              Join the Waitlist →
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              id="hero-discord-btn"
-              className="font-ui tracking-widest uppercase text-sm px-8 py-4 rounded-lg text-parchment border border-gold/40 transition-all duration-300 hover:border-gold hover:bg-gold/5 hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-3"
-            >
-              <DiscordIcon size={16} />
-              Join Our Discord
-            </a>
-          </div>
-
-          <p className="font-ui text-muted text-xs tracking-widest uppercase animate-[fade-up_0.6s_ease-out_forwards] delay-400">
-            Built for Dungeon Masters &nbsp;·&nbsp; Runs on Discord &nbsp;·&nbsp; v0.5 live with active campaigns
-          </p>
         </div>
       </section>
 
       {/* ── WHAT IS SOULOGOS ──────────────────────────────────────────── */}
-      <section id="about" className="relative px-8 md:px-16 py-24 max-w-7xl mx-auto">
-        <GoldRule />
-        <ScrollReveal className="mb-12">
-          <h2 className="section-heading">What Is Soulogos?</h2>
-        </ScrollReveal>
-
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-          <ScrollReveal delay={0.1}>
-            <div className="p-8 md:p-10 rounded-lg border border-gold/10 bg-navy/30 h-full">
-              <div className="overline mb-2">The Problem</div>
-              <h3 className="font-display text-parchment text-2xl mb-4 leading-snug">Running NPCs is hard.</h3>
-              <p className="font-body text-muted text-lg leading-relaxed">
-                You're tracking initiative, managing the map, handling rules questions,
-                and somehow you're also supposed to voice the innkeeper, the merchant,
-                the villain, and the captain of the guard, all with distinct personalities,
-                consistent backstories, and memorable delivery.
-              </p>
-              <p className="font-body text-muted text-lg leading-relaxed mt-4 italic">
-                Most DMs don't. They can't. There isn't time.
-              </p>
-            </div>
+      <section id="about" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 w-full">
+        <div className="max-w-7xl w-full mr-auto">
+          <GoldRule />
+          <ScrollReveal className="mb-12">
+            <h2 className="section-heading">What Is Soulogos?</h2>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.2}>
-            <div className="p-8 md:p-10 rounded-lg border border-gold/25 h-full bg-[linear-gradient(135deg,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_100%)]">
-              <div className="overline mb-2">The Solution</div>
-              <h3 className="font-display text-gold text-2xl mb-4 leading-snug">
-                Soulogos gives every NPC their own voice.
-              </h3>
-              <p className="font-body text-muted text-lg leading-relaxed">
-                Each NPC is a &quot;Soul&quot;, a fully authored character with a unique AI voice,
-                a deep personality, and memory of what's happened in your campaign.
-              </p>
-              <p className="font-body text-muted text-lg leading-relaxed mt-4">
-                Your players speak in Discord. The NPC responds out loud, in their voice,
-                in character. The bot handles the rest.
-              </p>
-              <p className="font-body text-parchment text-lg leading-relaxed mt-4 font-medium italic">
-                It's not a soundboard. It's not a chatbot.<br />
-                It's your cast, always ready.
-              </p>
-            </div>
-          </ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+            <ScrollReveal delay={0.1}>
+              <div className="p-8 md:p-10 rounded-lg border border-gold/10 bg-navy/30 h-full">
+                <div className="overline mb-2">The Problem</div>
+                <h3 className="font-display text-parchment text-2xl mb-4 leading-snug">Running NPCs is hard.</h3>
+                <p className="font-body text-muted text-lg leading-relaxed">
+                  You're tracking initiative, managing the map, handling rules questions,
+                  and somehow you're also supposed to voice the innkeeper, the merchant,
+                  the villain, and the captain of the guard, all with distinct personalities,
+                  consistent backstories, and memorable delivery.
+                </p>
+                <p className="font-body text-muted text-lg leading-relaxed mt-4 italic">
+                  Most DMs don't. They can't. There isn't time.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="p-8 md:p-10 rounded-lg border border-gold/25 h-full bg-[linear-gradient(135deg,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_100%)]">
+                <div className="overline mb-2">The Solution</div>
+                <h3 className="font-display text-gold text-2xl mb-4 leading-snug">
+                  Soulogos gives every NPC their own voice.
+                </h3>
+                <p className="font-body text-muted text-lg leading-relaxed">
+                  Each NPC is a &quot;Soul&quot;, a fully authored character with a unique AI voice,
+                  a deep personality, and memory of what's happened in your campaign.
+                </p>
+                <p className="font-body text-muted text-lg leading-relaxed mt-4">
+                  Your players speak in Discord. The NPC responds out loud, in their voice,
+                  in character. The bot handles the rest.
+                </p>
+                <p className="font-body text-parchment text-lg leading-relaxed mt-4 font-medium italic">
+                  It's not a soundboard. It's not a chatbot.<br />
+                  It's your cast, always ready.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────────────────── */}
-      <section id="how-it-works" className="relative px-8 md:px-16 py-24 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
-        <div className="max-w-7xl mx-auto">
+      <section id="how-it-works" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
+        <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
             <h2 className="section-heading">How It Works</h2>
@@ -320,67 +326,69 @@ export default function Home() {
       </section>
 
       {/* ── FEATURE DEEP DIVE ────────────────────────────────────────── */}
-      <section id="features" className="relative px-8 md:px-16 py-24 max-w-7xl mx-auto">
-        <GoldRule />
-        <ScrollReveal className="mb-2">
-          <h2 className="section-heading">Built for Real Campaigns</h2>
-        </ScrollReveal>
-        <ScrollReveal delay={0.1} className="mb-12">
-          <p className="section-subheading">Everything a DM actually needs</p>
-        </ScrollReveal>
+      <section id="features" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 w-full">
+        <div className="max-w-7xl w-full mr-auto">
+          <GoldRule />
+          <ScrollReveal className="mb-2">
+            <h2 className="section-heading">Built for Real Campaigns</h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1} className="mb-12">
+            <p className="section-subheading">Everything a DM actually needs</p>
+          </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <FeatureCard
-            icon={<SoulIcon />}
-            title="Living Souls"
-            body="Each NPC is authored as a Soul, a deep character bible covering history, beliefs, contradictions, relationships, and secrets. The AI knows what your NPC knows, and nothing more."
-            delay={0.1}
-          />
-          <FeatureCard
-            icon={<VoiceIcon />}
-            title="Real Voices"
-            body="Powered by ElevenLabs text-to-speech. Every NPC has a distinct, expressive voice tuned to their personality. Not a robot. Not a soundboard clip. A performance."
-            delay={0.2}
-          />
-          <FeatureCard
-            icon={<DiscordBadgeIcon />}
-            title="Players Can Speak"
-            body="Real-time speech-to-text lets your players talk naturally in Discord voice channels. NPCs hear them, process context, and respond in character, no typing required."
-            delay={0.3}
-          />
-          <FeatureCard
-            icon={<ShieldIcon />}
-            title="Multi-NPC Group Scenes"
-            body="Run group threads where multiple NPCs are active simultaneously. Each NPC decides independently whether to respond. The scene unfolds naturally, no puppeteering required."
-            delay={0.4}
-          />
-          <FeatureCard
-            icon={<D20Icon />}
-            title="Live Ambient Audio"
-            body="Syrinscape integration streams live atmospheric audio directly into Discord alongside NPC voices. Combat music, tavern ambience, dungeon dread, cued from a single board during play."
-            delay={0.5}
-          />
-          <FeatureCard
-            icon={<QuillIcon />}
-            title="Full DM Control"
-            body="The Authoring Console gives you a live dashboard for managing NPCs, cues, and session flow. Mute NPCs, override responses, manage group scenes. You are always in command."
-            delay={0.6}
-          />
-          <FeatureCard
-            icon={<ShieldIcon />}
-            title="Self-Hosted. Yours to Own."
-            body="No subscription. No SaaS. Soulogos runs on your server, under your control. One-time license, self-deployed. Your campaign data stays on your hardware."
-            delay={0.7}
-          />
+          <div className="grid md:grid-cols-2 gap-8">
+            <FeatureCard
+              icon={<SoulIcon />}
+              title="Living Souls"
+              body="Each NPC is authored as a Soul, a deep character bible covering history, beliefs, contradictions, relationships, and secrets. The AI knows what your NPC knows, and nothing more."
+              delay={0.1}
+            />
+            <FeatureCard
+              icon={<VoiceIcon />}
+              title="Real Voices"
+              body="Powered by ElevenLabs text-to-speech. Every NPC has a distinct, expressive voice tuned to their personality. Not a robot. Not a soundboard clip. A performance."
+              delay={0.2}
+            />
+            <FeatureCard
+              icon={<DiscordBadgeIcon />}
+              title="Players Can Speak"
+              body="Real-time speech-to-text lets your players talk naturally in Discord voice channels. NPCs hear them, process context, and respond in character, no typing required."
+              delay={0.3}
+            />
+            <FeatureCard
+              icon={<ShieldIcon />}
+              title="Multi-NPC Group Scenes"
+              body="Run group threads where multiple NPCs are active simultaneously. Each NPC decides independently whether to respond. The scene unfolds naturally, no puppeteering required."
+              delay={0.4}
+            />
+            <FeatureCard
+              icon={<D20Icon />}
+              title="Live Ambient Audio"
+              body="Syrinscape integration streams live atmospheric audio directly into Discord alongside NPC voices. Combat music, tavern ambience, dungeon dread, cued from a single board during play."
+              delay={0.5}
+            />
+            <FeatureCard
+              icon={<QuillIcon />}
+              title="Full DM Control"
+              body="The Authoring Console gives you a live dashboard for managing NPCs, cues, and session flow. Mute NPCs, override responses, manage group scenes. You are always in command."
+              delay={0.6}
+            />
+            <FeatureCard
+              icon={<ShieldIcon />}
+              title="Self-Hosted. Yours to Own."
+              body="No subscription. No SaaS. Soulogos runs on your server, under your control. One-time license, self-deployed. Your campaign data stays on your hardware."
+              delay={0.7}
+            />
+          </div>
         </div>
       </section>
 
       {/* ── AUTHORING CONSOLE ────────────────────────────────────────── */}
       <section
         id="console"
-        className="relative px-8 md:px-16 py-24 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
             <h2 className="section-heading">The Soul Behind the Souls</h2>
@@ -421,35 +429,37 @@ export default function Home() {
       </section>
 
       {/* ── SYRINSCAPE INTEGRATION ───────────────────────────────────── */}
-      <section id="syrinscape" className="relative px-8 md:px-16 py-24 max-w-7xl mx-auto">
-        <GoldRule />
-        <ScrollReveal className="mb-12">
-          <h2 className="section-heading">Set the Scene. Every Scene.</h2>
-        </ScrollReveal>
+      <section id="syrinscape" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 w-full">
+        <div className="max-w-7xl w-full mr-auto">
+          <GoldRule />
+          <ScrollReveal className="mb-12">
+            <h2 className="section-heading">Set the Scene. Every Scene.</h2>
+          </ScrollReveal>
 
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          <div className="flex-1">
-            <ScrollReveal delay={0.1}>
-              <p className="font-body text-muted text-lg leading-relaxed mb-6">
-                Soulogos integrates live with Syrinscape, the gold standard for
-                tabletop RPG ambient audio.
-              </p>
-              <p className="font-body text-muted text-lg leading-relaxed mb-6">
-                Build a cue board for each session: combat, exploration, social, dread.
-                During play, fire cues directly from Discord. Music, ambience, and NPC
-                voices all stream together into your voice channel.
-              </p>
-              <p className="font-body text-parchment text-lg leading-relaxed font-medium italic">
-                Your players don't hear a DM fumbling with a browser tab.<br/>
-                They hear a world.
-              </p>
-            </ScrollReveal>
-          </div>
-          
-          <div className="flex-1 w-full">
-            <ScrollReveal delay={0.2}>
-              <SyrinscapeCueBoard />
-            </ScrollReveal>
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="flex-1">
+              <ScrollReveal delay={0.1}>
+                <p className="font-body text-muted text-lg leading-relaxed mb-6">
+                  Soulogos integrates live with Syrinscape, the gold standard for
+                  tabletop RPG ambient audio.
+                </p>
+                <p className="font-body text-muted text-lg leading-relaxed mb-6">
+                  Build a cue board for each session: combat, exploration, social, dread.
+                  During play, fire cues directly from Discord. Music, ambience, and NPC
+                  voices all stream together into your voice channel.
+                </p>
+                <p className="font-body text-parchment text-lg leading-relaxed font-medium italic">
+                  Your players don't hear a DM fumbling with a browser tab.<br/>
+                  They hear a world.
+                </p>
+              </ScrollReveal>
+            </div>
+            
+            <div className="flex-1 w-full">
+              <ScrollReveal delay={0.2}>
+                <SyrinscapeCueBoard />
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
@@ -457,9 +467,9 @@ export default function Home() {
       {/* ── WHO IS THIS FOR ───────────────────────────────────────────── */}
       <section
         id="who"
-        className="relative px-8 md:px-16 py-24 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-12">
             <h2 className="section-heading">Built For</h2>
@@ -483,39 +493,38 @@ export default function Home() {
       </section>
 
       {/* ── TECH STRIP ───────────────────────────────────────────────── */}
-      <section id="tech" className="relative px-8 md:px-16 py-24 max-w-7xl mx-auto">
-        <GoldRule />
-        <ScrollReveal className="mb-2">
-          <h2 className="section-heading">The Stack Behind the Souls</h2>
-        </ScrollReveal>
-        
-        <ScrollReveal delay={0.1}>
-          <div className="flex flex-wrap items-stretch justify-start gap-5 mb-8 mt-10">
-            <TechBadge name="Claude AI" desc="NPC reasoning & character voice" />
-            <TechBadge name="ElevenLabs" desc="High-fidelity text-to-speech" />
-            <TechBadge name="Syrinscape" desc="Live ambient audio integration" />
-            <TechBadge name="Discord" desc="Native integration, no extra apps" />
-            <TechBadge name="Faster-Whisper" desc="Real-time speech-to-text" />
-          </div>
-        </ScrollReveal>
+      <section id="tech" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 w-full">
+        <div className="max-w-7xl w-full mr-auto">
+          <GoldRule />
+          <ScrollReveal className="mb-2">
+            <h2 className="section-heading">The Stack Behind the Souls</h2>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={0.1}>
+            <div className="flex flex-wrap items-stretch justify-start gap-5 mb-8 mt-10">
+              <TechBadge name="Claude AI" desc="NPC reasoning & character voice" />
+              <TechBadge name="ElevenLabs" desc="High-fidelity text-to-speech" />
+              <TechBadge name="Syrinscape" desc="Live ambient audio integration" />
+              <TechBadge name="Discord" desc="Native integration, no extra apps" />
+              <TechBadge name="Faster-Whisper" desc="Real-time speech-to-text" />
+            </div>
+          </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
-          <p className="font-ui text-gold text-sm tracking-widest uppercase mb-1">Built by a DM, for DMs</p>
-          <p className="font-body text-muted text-base italic">
-            v0.5 in active development. Live with real campaigns. 1,500+ tests passing.
-          </p>
-        </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="font-ui text-gold text-sm tracking-widest uppercase mb-1">Built by a DM, for DMs</p>
+            <p className="font-body text-muted text-base italic">
+              v0.5 in active development. Live with real campaigns. 1,500+ tests passing.
+            </p>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* ── WAITLIST CTA ─────────────────────────────────────────────── */}
       <section
         id="waitlist"
-        className="relative px-8 md:px-16 py-32 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
       >
-        <div className="absolute top-12 left-12 w-16 h-16 border-t border-l border-gold/20 hidden md:block" />
-        <div className="absolute bottom-12 left-12 w-16 h-16 border-b border-l border-gold/20 hidden md:block" />
-
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+        <div className="max-w-7xl w-full mr-auto flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1">
             <ScrollReveal>
               <h2
@@ -544,8 +553,8 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────────────── */}
-      <footer className="border-t border-gold/10 px-8 md:px-16 pt-24 pb-12 text-left bg-[#050709]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
+      <footer className="border-t border-gold/10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-24 pb-12 text-left bg-[#050709]">
+        <div className="max-w-7xl w-full mr-auto flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
             <div className="mb-4 flex items-center gap-3">
               <Image src="/logo-full.png" alt="Soulogos Lantern Logo" width={32} height={40} className="object-contain" />
@@ -553,7 +562,7 @@ export default function Home() {
                 <span className="font-display text-parchment tracking-wide text-xl block [text-shadow:0_0_20px_rgba(201,168,76,0.3)]">
                   Soulogos
                 </span>
-                <span className="font-ui text-muted/60 text-xs tracking-widest uppercase">
+                <span className="font-ui text-gold text-xs tracking-widest uppercase">
                   by Cognition &amp; Chaos
                 </span>
               </div>

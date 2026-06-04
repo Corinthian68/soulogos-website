@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { createPortal } from 'react-dom'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
 // ─── Arcane Sigil SVG ──────────────────────────────────────────────────────
@@ -165,12 +166,14 @@ export function WaitlistForm() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               required
+              suppressHydrationWarning
               className="w-full px-5 py-4 rounded-lg bg-void border border-gold/30 text-parchment font-body text-lg placeholder:text-muted/50 outline-none transition-all duration-300 focus:border-gold focus:shadow-[0_0_10px_2px_rgba(201,168,76,0.2)] font-body"
             />
           </div>
           <button
             type="submit"
             id="waitlist-submit-btn"
+            suppressHydrationWarning
             className="w-full py-4 px-8 rounded-lg font-ui font-semibold tracking-widest uppercase bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] bg-[length:200%_200%] text-void text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(201,168,76,0.3)]"
           >
             Join the Waitlist
@@ -219,10 +222,117 @@ export function DiscordIcon({ size = 20 }: { size?: number }) {
   )
 }
 
+// ─── Zoomable Image Component ───────────────────────────────────────────────
+export function ZoomableImage({
+  src,
+  alt,
+  width,
+  height,
+  className = '',
+}: {
+  src: string
+  alt: string
+  width: number
+  height: number
+  className?: string
+}) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+      window.addEventListener('keydown', handleKeyDown)
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isOpen])
+
+  return (
+    <>
+      <div 
+        className="relative group cursor-zoom-in overflow-hidden rounded-lg"
+        onClick={() => setIsOpen(true)}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className={`transition-all duration-300 group-hover:scale-[1.01] group-hover:brightness-[1.05] ${className}`}
+        />
+        {/* Subtle magnifying indicator overlay */}
+        <div className="absolute inset-0 bg-void/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+          <div className="bg-navy/90 border border-gold/40 px-5 py-2.5 rounded-full text-xs font-ui tracking-widest text-gold shadow-lg backdrop-blur-sm uppercase">
+            🔍 Click to Enlarge
+          </div>
+        </div>
+      </div>
+
+      {mounted && createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-void/95 backdrop-blur-md cursor-zoom-out p-4 md:p-8"
+              onClick={() => setIsOpen(false)}
+            >
+              {/* Close button */}
+              <button 
+                className="absolute top-6 right-6 text-gold/80 hover:text-gold text-2xl font-ui focus:outline-none cursor-pointer p-2 z-50 transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setIsOpen(false)
+                }}
+              >
+                ✕ Close
+              </button>
+              
+              <motion.div 
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                className="relative max-w-6xl w-full max-h-[85vh] flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={width}
+                  height={height}
+                  className="object-contain w-full h-auto max-h-[85vh] rounded-lg border border-gold/40 shadow-gold-md"
+                />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
+    </>
+  )
+}
+
 // ─── Authoring Console Mockup ───────────────────────────────────────────────
 export function ConsoleMockup() {
   return (
-    <Image
+    <ZoomableImage
       src="/authoring-npc.png"
       alt="Soulogos Authoring Console"
       width={3829}
@@ -235,7 +345,7 @@ export function ConsoleMockup() {
 // ─── Syrinscape Cue Board ───────────────────────────────────────────────────
 export function SyrinscapeCueBoard() {
   return (
-    <Image
+    <ZoomableImage
       src="/syrinscape-builder.png"
       alt="Soulogos Syrinscape cue board builder"
       width={3835}
@@ -257,24 +367,128 @@ export function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-4 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-4 transition-all duration-500 ${
         scrolled ? 'bg-navy/95 backdrop-blur-md border-b border-gold/15' : 'bg-transparent backdrop-blur-none border-b border-transparent'
       }`}
     >
-      <div className="flex items-center gap-3">
-        <Image src="/logo-full.png" alt="Soulogos Lantern Logo" width={32} height={40} className="object-contain" />
-        <span className="font-display text-parchment tracking-wide text-xl [text-shadow:0_0_20px_rgba(201,168,76,0.3)]">
-          Soulogos
-        </span>
+      <div className="max-w-7xl w-full mr-auto flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Image src="/logo-full.png" alt="Soulogos Lantern Logo" width={32} height={40} className="object-contain" />
+          <div className="flex flex-col">
+            <span className="font-display text-parchment tracking-wide text-lg leading-tight [text-shadow:0_0_20px_rgba(201,168,76,0.3)]">
+              Soulogos
+            </span>
+            <span className="font-ui text-gold text-[9px] tracking-widest uppercase leading-none">
+              by Cognition &amp; Chaos
+            </span>
+          </div>
+        </div>
+        
+        <a
+          href="#waitlist"
+          id="nav-join-waitlist-btn"
+          className="font-ui text-xs tracking-widest uppercase px-5 py-2.5 rounded border border-gold/60 text-gold transition-all duration-300 hover:bg-gold/10 hover:border-gold gold-pulse-btn"
+        >
+          Join Waitlist
+        </a>
       </div>
-      
-      <a
-        href="#waitlist"
-        id="nav-join-waitlist-btn"
-        className="font-ui text-xs tracking-widest uppercase px-5 py-2.5 rounded border border-gold/60 text-gold transition-all duration-300 hover:bg-gold/10 hover:border-gold gold-pulse-btn"
-      >
-        Join Waitlist
-      </a>
     </nav>
+  )
+}
+
+// ─── Arcane Scroll Tracker ──────────────────────────────────────────────────
+export function ScrollTracker() {
+  const [activeSection, setActiveSection] = useState('hero')
+
+  const sections = [
+    { id: 'hero', label: 'I. Summoning' },
+    { id: 'about', label: 'II. The Souls' },
+    { id: 'how-it-works', label: 'III. The Ritual' },
+    { id: 'features', label: 'IV. The Craft' },
+    { id: 'console', label: 'V. The Console' },
+    { id: 'syrinscape', label: 'VI. The Ambience' },
+    { id: 'who', label: 'VII. The Chosen' },
+    { id: 'waitlist', label: 'VIII. The Registry' },
+  ]
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -40% 0px',
+      threshold: 0,
+    }
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+    
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  const handleScroll = (id: string) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  return (
+    <div 
+      className="arcanum-tracker fixed top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-6"
+      aria-label="Arcane Scroll Tracker"
+    >
+      {/* Tracker Line */}
+      <div className="w-[1px] h-[320px] relative bg-gradient-to-b from-transparent via-gold/20 to-transparent flex flex-col justify-between items-center">
+        {sections.map(({ id, label }) => {
+          const isActive = activeSection === id
+          return (
+            <button
+              key={id}
+              onClick={() => handleScroll(id)}
+              className="group relative flex items-center justify-center focus:outline-none z-10 cursor-pointer"
+              aria-label={`Scroll to ${label}`}
+            >
+              {/* Outer Ring */}
+              <div 
+                className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-all duration-500 bg-void ${
+                  isActive 
+                    ? 'border-gold shadow-gold-sm scale-110' 
+                    : 'border-gold/30 hover:border-gold/60 scale-100 hover:scale-105'
+                }`}
+              >
+                {/* Inner Core */}
+                <div 
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
+                    isActive 
+                      ? 'bg-gold animate-[wisp-pulse_3s_ease-in-out_infinite]' 
+                      : 'bg-gold/10 group-hover:bg-gold/40'
+                  }`}
+                />
+              </div>
+
+              {/* Runic Tooltip */}
+              <div 
+                className="absolute left-6 pl-2 opacity-0 -translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out"
+              >
+                <div className="bg-navy/95 border border-gold/30 px-3.5 py-1.5 rounded shadow-lg backdrop-blur-sm text-xs font-ui tracking-widest text-gold whitespace-nowrap uppercase">
+                  {label}
+                </div>
+              </div>
+            </button>
+          )
+        })}
+      </div>
+    </div>
   )
 }

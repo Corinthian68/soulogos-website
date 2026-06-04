@@ -42,6 +42,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -167,3 +169,49 @@ body::before {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0A0D14; }
 ::-webkit-scrollbar-thumb { background: #C9A84C; opacity: 0.4; border-radius: 3px; }
+
+/* ─── Arcane Gutter Layout System ───────────────────────────────────────── */
+.arcanum-section {
+  padding-left: 1.5rem !important; /* Mobile fallback */
+}
+.arcanum-tracker {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .arcanum-section {
+    padding-left: 5rem !important; /* 80px */
+  }
+  .arcanum-tracker {
+    display: flex !important;
+    left: 1.75rem !important; /* 28px - centers in 80px gutter */
+  }
+}
+
+@media (min-width: 1024px) {
+  .arcanum-section {
+    padding-left: 6rem !important; /* 96px */
+  }
+  .arcanum-tracker {
+    left: 2rem !important; /* 32px - centers in 96px gutter */
+  }
+}
+
+@media (min-width: 1280px) {
+  .arcanum-section {
+    padding-left: 8rem !important; /* 128px */
+  }
+  .arcanum-tracker {
+    left: 2.75rem !important; /* 44px - centers in 128px gutter */
+  }
+}
+
+@media (min-width: 1536px) {
+  .arcanum-section {
+    padding-left: 10rem !important; /* 160px */
+  }
+  .arcanum-tracker {
+    left: 3.5rem !important; /* 56px - centers in 160px gutter */
+  }
+}
+
