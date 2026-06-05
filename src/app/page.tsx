@@ -197,13 +197,23 @@ export default function Home() {
         <div className="max-w-7xl w-full mr-auto relative z-10 flex flex-col">
           {/* Top: Wordmark Block */}
           <div className="max-w-3xl w-full mb-20">
-            <div className="flex flex-col items-start text-left mb-8 w-full animate-[fade-up_0.6s_ease-out_forwards]">
-              <h1 className="font-display text-[#C9A84C] tracking-[0.15em] text-[clamp(2.8rem,6vw,4.5rem)] leading-none [text-shadow:0_0_40px_rgba(201,168,76,0.25)] uppercase">
-                Soulogos
-              </h1>
-              <p className="font-ui text-[#C9A84C] tracking-[0.25em] text-[clamp(1.4rem,3.15vw,2.38rem)] uppercase leading-none mt-5 pl-6 whitespace-nowrap">
-                by Cognition &amp; Chaos
-              </p>
+            <div className="flex items-center gap-6 mb-8 w-full animate-[fade-up_0.6s_ease-out_forwards]">
+              <Image
+                src="/lantern-only.png"
+                alt="Soulogos Lantern Logo"
+                width={120}
+                height={120}
+                className="object-contain"
+                priority
+              />
+              <div className="flex flex-col items-start text-left">
+                <h1 className="font-display text-[#C9A84C] tracking-[0.15em] text-[clamp(2.8rem,6vw,4.5rem)] leading-none [text-shadow:0_0_40px_rgba(201,168,76,0.25)] uppercase">
+                  Soulogos
+                </h1>
+                <p className="font-ui text-[#C9A84C] tracking-[0.25em] text-[clamp(1.4rem,3.15vw,2.38rem)] uppercase leading-none mt-5 pl-16 whitespace-nowrap">
+                  by Cognition &amp; Chaos
+                </p>
+              </div>
             </div>
 
             {/* Thin gold horizontal rule with vertical padding */}
@@ -576,7 +586,7 @@ export default function Home() {
         <div className="max-w-7xl w-full mr-auto flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <Image src="/lantern-only.png" alt="Soulogos Lantern Logo" width={32} height={32} className="object-contain" style={{ mixBlendMode: 'lighten' }} />
+              <Image src="/lantern-only.png" alt="Soulogos Lantern Logo" width={32} height={32} className="object-contain" />
               <div>
                 <span className="font-display text-parchment tracking-wide text-xl block [text-shadow:0_0_20px_rgba(201,168,76,0.3)]">
                   Soulogos
