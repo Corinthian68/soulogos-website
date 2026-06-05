@@ -196,12 +196,12 @@ export default function Home() {
 
         <div className="max-w-7xl w-full mr-auto relative z-10 flex flex-col">
           {/* Top: Wordmark Block */}
-          <div className="max-w-3xl w-full mb-12">
-            <div className="flex flex-col items-center text-center mb-8 w-full animate-[fade-up_0.6s_ease-out_forwards]">
+          <div className="max-w-3xl w-full mb-16">
+            <div className="flex flex-col items-start text-left mb-8 w-full animate-[fade-up_0.6s_ease-out_forwards]">
               <h1 className="font-display text-[#C9A84C] tracking-[0.15em] text-[clamp(2.8rem,6vw,4.5rem)] leading-none [text-shadow:0_0_40px_rgba(201,168,76,0.25)] uppercase">
                 Soulogos
               </h1>
-              <p className="font-ui text-[#C9A84C] tracking-[0.25em] text-[clamp(1.4rem,3.15vw,2.38rem)] uppercase leading-none mt-5 whitespace-nowrap">
+              <p className="font-ui text-[#C9A84C] tracking-[0.25em] text-[clamp(1.4rem,3.15vw,2.38rem)] uppercase leading-none mt-5 pl-3 whitespace-nowrap">
                 by Cognition &amp; Chaos
               </p>
             </div>
@@ -231,7 +231,7 @@ export default function Home() {
               Your players talk. Your NPCs answer, in character, in voice, every time.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-5 mb-10 animate-[fade-up_0.6s_ease-out_forwards] delay-400">
+            <div className="flex flex-col sm:flex-row gap-5 mb-10 ml-16 animate-[fade-up_0.6s_ease-out_forwards] delay-400">
               <a
                 href="#waitlist"
                 id="hero-join-waitlist-btn"
