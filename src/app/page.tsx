@@ -171,11 +171,11 @@ export default function Home() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         id="hero"
-        className="relative min-h-0 flex flex-col text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-28 pb-10 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
+        className="relative min-h-0 flex flex-col text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-20 pb-10 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
       >
         {/* Full logo image from spec */}
         <div className="absolute right-0 top-8 bottom-0 w-[55%] pointer-events-none hidden lg:flex items-center justify-end pr-16 opacity-80 mix-blend-screen translate-x-[10%]">
-          <div className="relative w-[600px] h-[600px]">
+          <div className="relative w-[500px] h-[500px]">
             <Image
               src="/logo-full.png"
               alt="Soulogos Lantern Logo"
