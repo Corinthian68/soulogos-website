@@ -78,7 +78,7 @@ export function GoldRule() {
   return (
     <div
       ref={ref}
-      className={`gold-rule w-full my-16 origin-left transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${inView ? 'scale-x-100' : 'scale-x-0'}`}
+      className={`gold-rule w-full my-8 origin-left transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${inView ? 'scale-x-100' : 'scale-x-0'}`}
     />
   )
 }
@@ -167,14 +167,14 @@ export function WaitlistForm() {
               placeholder="your@email.com"
               required
               suppressHydrationWarning
-              className="w-full px-5 py-4 rounded-lg bg-void border border-gold/30 text-parchment font-body text-lg placeholder:text-muted/50 outline-none transition-all duration-300 focus:border-gold focus:shadow-[0_0_10px_2px_rgba(201,168,76,0.2)] font-body"
+              className="w-full px-6 py-5 rounded-lg bg-void border border-gold/30 text-parchment font-body text-xl placeholder:text-muted/50 outline-none transition-all duration-300 focus:border-gold focus:shadow-[0_0_10px_2px_rgba(201,168,76,0.2)] font-body"
             />
           </div>
           <button
             type="submit"
             id="waitlist-submit-btn"
             suppressHydrationWarning
-            className="w-full py-4 px-8 rounded-lg font-ui font-semibold tracking-widest uppercase bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] bg-[length:200%_200%] text-void text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(201,168,76,0.3)]"
+            className="w-full py-5 px-10 rounded-lg font-ui font-semibold tracking-widest uppercase bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] bg-[length:200%_200%] text-void text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(201,168,76,0.3)]"
           >
             Join the Waitlist
           </button>
@@ -200,7 +200,7 @@ export function WaitlistForm() {
         target="_blank"
         rel="noopener noreferrer"
         id="discord-cta-btn"
-        className="flex items-center justify-center gap-3 w-full py-4 px-8 rounded-lg font-ui font-semibold tracking-widest uppercase text-sm text-white transition-all duration-300 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98] bg-[#5865F2] shadow-[0_4px_20px_rgba(88,101,242,0.3)]"
+        className="flex items-center justify-center gap-3 w-full py-5 px-10 rounded-lg font-ui font-semibold tracking-widest uppercase text-base text-white transition-all duration-300 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98] bg-[#5865F2] shadow-[0_4px_20px_rgba(88,101,242,0.3)]"
       >
         <DiscordIcon />
         Join Our Discord
@@ -367,18 +367,25 @@ export function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-4 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-2 transition-all duration-500 ${
         scrolled ? 'bg-navy/95 backdrop-blur-md border-b border-gold/15' : 'bg-transparent backdrop-blur-none border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl w-full mr-auto flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Image src="/logo-full.png" alt="Soulogos Lantern Logo" width={32} height={40} className="object-contain" />
+        <div className={`flex items-center gap-3 transition-all duration-500 ${scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}>
+          <Image
+            src="/lantern-only.png"
+            alt="Soulogos Lantern Logo"
+            width={36}
+            height={36}
+            className="object-contain"
+            style={{ mixBlendMode: 'lighten' }}
+          />
           <div className="flex flex-col">
-            <span className="font-display text-parchment tracking-wide text-lg leading-tight [text-shadow:0_0_20px_rgba(201,168,76,0.3)]">
+            <span className="font-display text-[#C9A84C] tracking-wide text-xl leading-none">
               Soulogos
             </span>
-            <span className="font-ui text-gold text-[9px] tracking-widest uppercase leading-none">
+            <span className="font-ui text-[#C9A84C] text-[9px] tracking-widest uppercase leading-none mt-1">
               by Cognition &amp; Chaos
             </span>
           </div>
@@ -387,7 +394,7 @@ export function Nav() {
         <a
           href="#waitlist"
           id="nav-join-waitlist-btn"
-          className="font-ui text-xs tracking-widest uppercase px-5 py-2.5 rounded border border-gold/60 text-gold transition-all duration-300 hover:bg-gold/10 hover:border-gold gold-pulse-btn"
+          className="font-ui text-sm tracking-widest uppercase px-8 py-4 rounded border border-gold/60 text-gold transition-all duration-300 hover:bg-gold/10 hover:border-gold gold-pulse-btn"
         >
           Join Waitlist
         </a>
@@ -456,6 +463,7 @@ export function ScrollTracker() {
             <button
               key={id}
               onClick={() => handleScroll(id)}
+              suppressHydrationWarning
               className="group relative flex items-center justify-center focus:outline-none z-10 cursor-pointer"
               aria-label={`Scroll to ${label}`}
             >
@@ -481,7 +489,7 @@ export function ScrollTracker() {
               <div 
                 className="absolute left-6 pl-2 opacity-0 -translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out"
               >
-                <div className="bg-navy/95 border border-gold/30 px-3.5 py-1.5 rounded shadow-lg backdrop-blur-sm text-xs font-ui tracking-widest text-gold whitespace-nowrap uppercase">
+                <div className="bg-navy/95 border border-gold/30 px-5 py-2.5 rounded shadow-lg backdrop-blur-sm text-sm font-ui tracking-widest text-gold whitespace-nowrap uppercase">
                   {label}
                 </div>
               </div>

@@ -119,7 +119,7 @@ function Step({
 // ─── Tech Badge ──────────────────────────────────────────────────────────────
 function TechBadge({ name, desc }: { name: string; desc: string }) {
   return (
-    <div className="flex flex-col items-start gap-1 px-5 py-4 rounded-lg border border-gold/15 bg-navy/40 hover:border-gold/40 transition-all duration-300 min-w-[200px]">
+    <div className="flex flex-col items-start gap-1 px-6 py-5 rounded-lg border border-gold/15 bg-navy/40 hover:border-gold/40 transition-all duration-300 min-w-[200px]">
       <span className="font-ui text-gold text-sm font-semibold tracking-wide">{name}</span>
       <span className="font-body text-muted text-xs leading-tight">{desc}</span>
     </div>
@@ -171,7 +171,7 @@ export default function Home() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         id="hero"
-        className="relative min-h-screen flex flex-col justify-center text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-24 pb-20 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
+        className="relative min-h-screen flex flex-col text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-12 pb-20 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
       >
         {/* Full logo image from spec */}
         <div className="absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none hidden lg:flex items-center justify-end pr-16 opacity-80 mix-blend-screen translate-x-[10%]">
@@ -180,6 +180,7 @@ export default function Home() {
               src="/logo-full.png"
               alt="Soulogos Lantern Logo"
               fill
+              sizes="(max-width: 1024px) 100vw, 700px"
               className="object-contain"
               priority
             />
@@ -193,30 +194,48 @@ export default function Home() {
 
         <MistGradient />
 
-        <div className="max-w-7xl w-full mr-auto relative z-10">
-          <div className="max-w-3xl w-full">
-            <div className="overline mb-4 animate-[fade-up_0.6s_ease-out_forwards]">
+        <div className="max-w-7xl w-full mr-auto relative z-10 flex-grow flex flex-col">
+          {/* Top: Wordmark Block */}
+          <div className="max-w-3xl w-full mb-6">
+            <div className="flex flex-col items-start text-left mb-8 w-full animate-[fade-up_0.6s_ease-out_forwards]">
+              <h1 className="font-display text-[#C9A84C] tracking-[0.15em] text-[clamp(4rem,9vw,6.8rem)] leading-none [text-shadow:0_0_40px_rgba(201,168,76,0.25)] uppercase">
+                Soulogos
+              </h1>
+              <p className="font-ui text-[#C9A84C] tracking-[0.25em] text-[clamp(1.4rem,3.15vw,2.38rem)] uppercase leading-none mt-5 whitespace-nowrap">
+                by Cognition &amp; Chaos
+              </p>
+            </div>
+
+            {/* Thin gold horizontal rule with vertical padding */}
+            <div className="py-4 w-full animate-[fade-up_0.6s_ease-out_forwards] delay-75">
+              <div className="w-48 h-[1px] bg-[linear-gradient(90deg,rgba(201,168,76,0.35)_0%,transparent_100%)]" />
+            </div>
+          </div>
+
+          {/* Center/Bottom: Headline, body copy, and buttons */}
+          <div className="max-w-3xl w-full my-auto pb-12">
+            <div className="overline mb-4 animate-[fade-up_0.6s_ease-out_forwards] delay-100">
               COMING SOON, v0.5 IN ACTIVE DEVELOPMENT
             </div>
 
-            <h1 className="font-display text-parchment leading-tight mb-6 text-[clamp(2.4rem,6vw,5rem)] [text-shadow:0_0_60px_rgba(201,168,76,0.15)] animate-[fade-up_0.6s_ease-out_forwards] delay-100">
+            <h2 className="font-display text-parchment leading-tight mb-6 text-[clamp(2.4rem,5.4vw,4.08rem)] [text-shadow:0_0_60px_rgba(201,168,76,0.15)] animate-[fade-up_0.6s_ease-out_forwards] delay-200">
               Give Your NPCs<br />
               <span className="text-[#E8C97A]">a Voice.</span>
               <br />
               Give Them a Soul.
-            </h1>
+            </h2>
 
-            <p className="font-body text-muted max-w-xl mb-10 text-[clamp(1.1rem,2vw,1.25rem)] leading-[1.8] animate-[fade-up_0.6s_ease-out_forwards] delay-200">
+            <p className="font-body text-muted max-w-xl mb-10 text-[clamp(1.1rem,2vw,1.25rem)] leading-[1.8] animate-[fade-up_0.6s_ease-out_forwards] delay-300">
               Soulogos is a Discord bot that brings your tabletop RPG NPCs to life
               with real AI-generated voices, deep character memory, and natural conversation.
               Your players talk. Your NPCs answer, in character, in voice, every time.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-5 mb-10 animate-[fade-up_0.6s_ease-out_forwards] delay-300">
+            <div className="flex flex-col sm:flex-row gap-5 mb-10 animate-[fade-up_0.6s_ease-out_forwards] delay-400">
               <a
                 href="#waitlist"
                 id="hero-join-waitlist-btn"
-                className="font-ui tracking-widest uppercase text-sm px-8 py-4 rounded-lg text-void font-semibold transition-all duration-300 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98] bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] shadow-[0_4px_24px_rgba(201,168,76,0.35)]"
+                className="font-ui tracking-widest uppercase text-base px-10 py-5 rounded-lg text-void font-semibold transition-all duration-300 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98] bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] shadow-[0_4px_24px_rgba(201,168,76,0.35)]"
               >
                 Join the Waitlist
               </a>
@@ -225,14 +244,14 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-discord-btn"
-                className="font-ui tracking-widest uppercase text-sm px-8 py-4 rounded-lg text-parchment border border-gold/40 transition-all duration-300 hover:border-gold hover:bg-gold/5 hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-3"
+                className="font-ui tracking-widest uppercase text-base px-10 py-5 rounded-lg text-parchment border border-gold/40 transition-all duration-300 hover:border-gold hover:bg-gold/5 hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-3"
               >
                 <DiscordIcon size={16} />
                 Join Our Discord
               </a>
             </div>
 
-            <p className="font-ui text-muted text-xs tracking-widest uppercase animate-[fade-up_0.6s_ease-out_forwards] delay-400">
+            <p className="font-ui text-muted text-xs tracking-widest uppercase animate-[fade-up_0.6s_ease-out_forwards] delay-500">
               Built for Dungeon Masters &nbsp;·&nbsp; Runs on Discord &nbsp;·&nbsp; v0.5 live with active campaigns
             </p>
           </div>
@@ -522,7 +541,7 @@ export default function Home() {
       {/* ── WAITLIST CTA ─────────────────────────────────────────────── */}
       <section
         id="waitlist"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1">
@@ -553,11 +572,11 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────────────── */}
-      <footer className="border-t border-gold/10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-24 pb-12 text-left bg-[#050709]">
+      <footer className="border-t border-gold/10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-12 pb-12 text-left bg-[#050709]">
         <div className="max-w-7xl w-full mr-auto flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <Image src="/logo-full.png" alt="Soulogos Lantern Logo" width={32} height={40} className="object-contain" />
+              <Image src="/lantern-only.png" alt="Soulogos Lantern Logo" width={32} height={32} className="object-contain" style={{ mixBlendMode: 'lighten' }} />
               <div>
                 <span className="font-display text-parchment tracking-wide text-xl block [text-shadow:0_0_20px_rgba(201,168,76,0.3)]">
                   Soulogos
@@ -590,7 +609,7 @@ export default function Home() {
                 Discord
               </a>
               <a
-                href="mailto:hello@soulogos.com"
+                href="mailto:cognitionandchaos.studio@soulogos.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 id="footer-email-link"
