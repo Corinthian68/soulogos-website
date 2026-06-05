@@ -240,7 +240,7 @@ export default function Home() {
                 Join the Waitlist
               </a>
               <a
-                href="#"
+                href="https://discord.gg/u6P8shaMZp"
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-discord-btn"
