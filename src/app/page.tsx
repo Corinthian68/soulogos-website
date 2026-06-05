@@ -171,7 +171,7 @@ export default function Home() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         id="hero"
-        className="relative min-h-screen flex flex-col text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-12 pb-10 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
+        className="relative min-h-screen flex flex-col text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-20 pb-10 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
       >
         {/* Full logo image from spec */}
         <div className="absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none hidden lg:flex items-center justify-end pr-16 opacity-80 mix-blend-screen translate-x-[10%]">
@@ -194,7 +194,7 @@ export default function Home() {
 
         <MistGradient />
 
-        <div className="max-w-7xl w-full mr-auto relative z-10 flex-grow flex flex-col">
+        <div className="max-w-7xl w-full mr-auto relative z-10 flex flex-col">
           {/* Top: Wordmark Block */}
           <div className="max-w-3xl w-full mb-12">
             <div className="flex flex-col items-start text-left mb-8 w-full animate-[fade-up_0.6s_ease-out_forwards]">
@@ -213,7 +213,7 @@ export default function Home() {
           </div>
 
           {/* Center/Bottom: Headline, body copy, and buttons */}
-          <div className="max-w-3xl w-full my-auto pb-12">
+          <div className="max-w-3xl w-full mt-0 pb-0">
             <div className="overline mb-4 animate-[fade-up_0.6s_ease-out_forwards] delay-100">
               COMING SOON, v0.5 IN ACTIVE DEVELOPMENT
             </div>
