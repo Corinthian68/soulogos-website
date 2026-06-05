@@ -394,7 +394,7 @@ export function Nav() {
         <a
           href="#waitlist"
           id="nav-join-waitlist-btn"
-          className="font-ui text-sm tracking-widest uppercase px-8 py-4 rounded border border-gold/60 text-gold transition-all duration-300 hover:bg-gold/10 hover:border-gold gold-pulse-btn"
+          className="font-ui text-sm tracking-widest uppercase px-8 py-4 rounded border border-gold/60 text-gold transition-all duration-300 hover:bg-gold/10 hover:border-gold gold-pulse-btn lg:mr-[0.5in]"
         >
           Join Waitlist
         </a>
