@@ -452,7 +452,7 @@ export function ScrollTracker() {
 
   return (
     <div 
-      className="arcanum-tracker fixed top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-6"
+      className="arcanum-tracker fixed top-1/2 -translate-y-1/2 z-40 left-4 flex flex-col items-center gap-6"
       aria-label="Arcane Scroll Tracker"
     >
       {/* Tracker Line */}

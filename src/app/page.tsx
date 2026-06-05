@@ -171,7 +171,7 @@ export default function Home() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         id="hero"
-        className="relative min-h-screen flex flex-col text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-20 pb-10 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
+        className="relative min-h-0 flex flex-col text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-20 pb-10 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
       >
         {/* Full logo image from spec */}
         <div className="absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none hidden lg:flex items-center justify-end pr-16 opacity-80 mix-blend-screen translate-x-[10%]">
@@ -198,7 +198,7 @@ export default function Home() {
           {/* Top: Wordmark Block */}
           <div className="max-w-3xl w-full mb-12">
             <div className="flex flex-col items-start text-left mb-8 w-full animate-[fade-up_0.6s_ease-out_forwards]">
-              <h1 className="font-display text-[#C9A84C] tracking-[0.15em] text-[clamp(4rem,9vw,6.8rem)] leading-none [text-shadow:0_0_40px_rgba(201,168,76,0.25)] uppercase">
+              <h1 className="font-display text-[#C9A84C] tracking-[0.15em] text-[clamp(2.8rem,6vw,4.5rem)] leading-none [text-shadow:0_0_40px_rgba(201,168,76,0.25)] uppercase">
                 Soulogos
               </h1>
               <p className="font-ui text-[#C9A84C] tracking-[0.25em] text-[clamp(1.4rem,3.15vw,2.38rem)] uppercase leading-none mt-5 whitespace-nowrap">
