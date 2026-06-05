@@ -196,7 +196,7 @@ export function WaitlistForm() {
       </div>
 
       <a
-        href="#"
+        href="https://discord.gg/u6P8shaMZp"
         target="_blank"
         rel="noopener noreferrer"
         id="discord-cta-btn"
