@@ -174,7 +174,7 @@ export default function Home() {
         className="relative min-h-0 flex flex-col text-left arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-20 pb-10 overflow-hidden bg-[radial-gradient(ellipse_80%_70%_at_70%_40%,#111827_0%,#0A0D14_55%,#050709_100%)]"
       >
         {/* Full logo image from spec */}
-        <div className="absolute right-0 top-8 bottom-0 w-[55%] pointer-events-none hidden lg:flex items-center justify-end pr-16 opacity-80 mix-blend-screen translate-x-[10%]">
+        <div className="absolute right-0 top-16 bottom-0 w-[55%] pointer-events-none hidden lg:flex items-center justify-end pr-16 opacity-80 mix-blend-screen translate-x-[10%]">
           <div className="relative w-[500px] h-[500px]">
             <Image
               src="/logo-full.png"
@@ -196,18 +196,18 @@ export default function Home() {
 
         <div className="max-w-7xl w-full mr-auto relative z-10 flex flex-col">
           {/* Top: Wordmark Block */}
-          <div className="max-w-3xl w-full mb-20">
+          <div className="max-w-3xl w-full mb-8">
             <div className="flex flex-col items-start text-left mb-8 w-full animate-[fade-up_0.6s_ease-out_forwards]">
-              <h1 className="font-display text-[#C9A84C] tracking-[0.15em] text-[clamp(2.8rem,6vw,4.5rem)] leading-none [text-shadow:0_0_40px_rgba(201,168,76,0.25)] uppercase">
+              <h1 className="font-display text-[#C9A84C] tracking-[0.15em] text-[clamp(2rem,4vw,3rem)] leading-none [text-shadow:0_0_40px_rgba(201,168,76,0.25)] uppercase">
                 Soulogos
               </h1>
-              <p className="font-ui text-[#C9A84C] tracking-[0.25em] text-[clamp(1.4rem,3.15vw,2.38rem)] uppercase leading-none mt-5 pl-[3px] whitespace-nowrap">
+              <p className="font-ui text-[#C9A84C] tracking-[0.25em] text-[clamp(0.9rem,1.8vw,1.4rem)] uppercase leading-none mt-5 pl-[3px] whitespace-nowrap">
                 by Cognition &amp; Chaos
               </p>
             </div>
 
             {/* Thin gold horizontal rule with vertical padding */}
-            <div className="py-6 w-full animate-[fade-up_0.6s_ease-out_forwards] delay-75">
+            <div className="py-4 w-full animate-[fade-up_0.6s_ease-out_forwards] delay-75">
               <div className="w-48 h-[1px] bg-[linear-gradient(90deg,rgba(201,168,76,0.35)_0%,transparent_100%)]" />
             </div>
           </div>
@@ -259,10 +259,10 @@ export default function Home() {
       </section>
 
       {/* ── WHAT IS SOULOGOS ──────────────────────────────────────────── */}
-      <section id="about" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 w-full">
+      <section id="about" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
-          <ScrollReveal className="mb-12">
+          <ScrollReveal className="mb-16">
             <h2 className="section-heading">What Is Soulogos?</h2>
           </ScrollReveal>
 
@@ -308,13 +308,13 @@ export default function Home() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────────────────── */}
-      <section id="how-it-works" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
+      <section id="how-it-works" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
             <h2 className="section-heading">How It Works</h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.1} className="mb-12">
+          <ScrollReveal delay={0.1} className="mb-16">
             <p className="section-subheading">Three steps. No code required.</p>
           </ScrollReveal>
 
@@ -345,17 +345,17 @@ export default function Home() {
       </section>
 
       {/* ── FEATURE DEEP DIVE ────────────────────────────────────────── */}
-      <section id="features" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 w-full">
+      <section id="features" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
             <h2 className="section-heading">Built for Real Campaigns</h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.1} className="mb-12">
+          <ScrollReveal delay={0.1} className="mb-16">
             <p className="section-subheading">Everything a DM actually needs</p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-12">
             <FeatureCard
               icon={<SoulIcon />}
               title="Living Souls"
@@ -405,14 +405,14 @@ export default function Home() {
       {/* ── AUTHORING CONSOLE ────────────────────────────────────────── */}
       <section
         id="console"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
             <h2 className="section-heading">The Soul Behind the Souls</h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.1} className="mb-12">
+          <ScrollReveal delay={0.1} className="mb-16">
             <p className="section-subheading">Every NPC starts in the Authoring Console.</p>
           </ScrollReveal>
 
@@ -448,10 +448,10 @@ export default function Home() {
       </section>
 
       {/* ── SYRINSCAPE INTEGRATION ───────────────────────────────────── */}
-      <section id="syrinscape" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 w-full">
+      <section id="syrinscape" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
-          <ScrollReveal className="mb-12">
+          <ScrollReveal className="mb-16">
             <h2 className="section-heading">Set the Scene. Every Scene.</h2>
           </ScrollReveal>
 
@@ -486,15 +486,15 @@ export default function Home() {
       {/* ── WHO IS THIS FOR ───────────────────────────────────────────── */}
       <section
         id="who"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
-          <ScrollReveal className="mb-12">
+          <ScrollReveal className="mb-16">
             <h2 className="section-heading">Built For</h2>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-12">
             <AudienceCard
               subtitle="For the DM"
               title="Dungeon Masters"
@@ -512,7 +512,7 @@ export default function Home() {
       </section>
 
       {/* ── TECH STRIP ───────────────────────────────────────────────── */}
-      <section id="tech" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 w-full">
+      <section id="tech" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
@@ -541,7 +541,7 @@ export default function Home() {
       {/* ── WAITLIST CTA ─────────────────────────────────────────────── */}
       <section
         id="waitlist"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-24 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1">
