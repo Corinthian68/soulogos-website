@@ -146,48 +146,15 @@ export function FeatureCard({
 
 // ─── Waitlist Form ──────────────────────────────────────────────────────────
 export function WaitlistForm() {
-  const [submitted, setSubmitted] = useState(false)
-  const [email, setEmail] = useState('')
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email.trim()) setSubmitted(true)
-  }
-
   return (
     <div className="w-full">
-      {!submitted ? (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-          <div className="relative">
-            <input
-              id="waitlist-email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
-              required
-              suppressHydrationWarning
-              className="w-full px-6 py-5 rounded-lg bg-void border border-gold/30 text-parchment font-body text-xl placeholder:text-muted/50 outline-none transition-all duration-300 focus:border-gold focus:shadow-[0_0_10px_2px_rgba(201,168,76,0.2)] font-body"
-            />
-          </div>
-          <button
-            type="submit"
-            id="waitlist-submit-btn"
-            suppressHydrationWarning
-            className="w-full py-5 px-10 rounded-lg font-ui font-semibold tracking-widest uppercase bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] bg-[length:200%_200%] text-void text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(201,168,76,0.3)]"
-          >
-            Join the Waitlist
-          </button>
-        </form>
-      ) : (
-        <div
-          className="text-center py-8 px-6 rounded-lg border border-gold/40 bg-navy/60 shadow-[0_0_30px_rgba(201,168,76,0.1)] animate-[fade-up_0.6s_ease-out_forwards]"
-        >
-          <div className="text-4xl mb-3" aria-hidden="true">🔮</div>
-          <p className="font-display text-gold text-xl mb-2">Your soul has been registered.</p>
-          <p className="font-body text-muted text-base">We will summon you when the voices are ready.</p>
-        </div>
-      )}
+      <iframe
+        src="https://tally.so/embed/1ARlzL?alignLeft=1&hideTitle=1&transparentBackground=1"
+        width="100%"
+        height="180"
+        frameBorder="0"
+        title="Soulogos Waitlist"
+      />
 
       <div className="flex items-center gap-4 my-6">
         <div className="flex-1 h-px bg-gold/20" />
@@ -200,7 +167,7 @@ export function WaitlistForm() {
         target="_blank"
         rel="noopener noreferrer"
         id="discord-cta-btn"
-        className="flex items-center justify-center gap-3 w-full py-5 px-10 rounded-lg font-ui font-semibold tracking-widest uppercase text-base text-white transition-all duration-300 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98] bg-[#5865F2] shadow-[0_4px_20px_rgba(88,101,242,0.3)]"
+        className="flex items-center justify-center gap-3 w-full py-5 px-10 rounded-lg font-ui font-semibold tracking-widest uppercase text-base text-void transition-all duration-300 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98] bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] shadow-[0_4px_20px_rgba(201,168,76,0.3)]"
       >
         <DiscordIcon />
         Join Our Discord
