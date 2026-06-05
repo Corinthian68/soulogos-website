@@ -434,13 +434,27 @@ export function ScrollTracker() {
     }
 
     const observer = new IntersectionObserver(observerCallback, observerOptions)
-    
+
     sections.forEach(({ id }) => {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
     })
 
-    return () => observer.disconnect()
+    // The last section's center may never reach the observer's center band
+    // when scrolled to the bottom (the footer sits below it), so the final
+    // dot would never activate. Force it active once the page hits its end.
+    const onScroll = () => {
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
+      if (scrolledToBottom) setActiveSection(sections[sections.length - 1].id)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
 
   const handleScroll = (id: string) => {
