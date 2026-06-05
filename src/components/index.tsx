@@ -167,7 +167,7 @@ export function WaitlistForm() {
               placeholder="your@email.com"
               required
               suppressHydrationWarning
-              className="w-full px-6 py-5 rounded-lg bg-void border border-gold/30 text-parchment font-body text-xl placeholder:text-muted/50 outline-none transition-all duration-300 focus:border-gold focus:shadow-[0_0_10px_2px_rgba(201,168,76,0.2)] font-body"
+              className="w-full pl-8 pr-6 py-5 rounded-lg bg-void border border-gold/30 text-parchment font-body text-xl placeholder:text-muted/50 outline-none transition-all duration-300 focus:border-gold focus:shadow-[0_0_10px_2px_rgba(201,168,76,0.2)] font-body"
             />
           </div>
           <button
@@ -426,6 +426,14 @@ export function ScrollTracker() {
     }
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      // At the very top of the page the hero owns the active state. The hero
+      // is shorter than the observer's center band, so without this its
+      // initial callback would activate a later section and the first dot
+      // would never light up on load.
+      if (window.scrollY < 4) {
+        setActiveSection(sections[0].id)
+        return
+      }
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id)
@@ -444,6 +452,11 @@ export function ScrollTracker() {
     // when scrolled to the bottom (the footer sits below it), so the final
     // dot would never activate. Force it active once the page hits its end.
     const onScroll = () => {
+      // Top of page: hero is active (mirrors the bottom fallback below).
+      if (window.scrollY < 4) {
+        setActiveSection(sections[0].id)
+        return
+      }
       const scrolledToBottom =
         window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
       if (scrolledToBottom) setActiveSection(sections[sections.length - 1].id)
