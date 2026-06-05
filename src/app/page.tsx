@@ -175,7 +175,7 @@ export default function Home() {
       >
         {/* Full logo image from spec */}
         <div className="absolute right-0 top-8 bottom-0 w-[55%] pointer-events-none hidden lg:flex items-center justify-end pr-16 opacity-80 mix-blend-screen translate-x-[10%]">
-          <div className="relative w-[700px] h-[700px]">
+          <div className="relative w-[600px] h-[600px]">
             <Image
               src="/logo-full.png"
               alt="Soulogos Lantern Logo"
