@@ -600,7 +600,7 @@ export default function Home() {
           <div className="flex flex-col items-start md:items-end gap-6">
             <div className="flex gap-6">
               <a
-                href="#"
+                href="https://discord.gg/u6P8shaMZp"
                 target="_blank"
                 rel="noopener noreferrer"
                 id="footer-discord-link"
