@@ -367,7 +367,7 @@ export function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-2 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 arcanum-section pr-12 md:pr-20 lg:pr-32 xl:pr-40 py-2 transition-all duration-500 ${
         scrolled ? 'bg-navy/95 backdrop-blur-md border-b border-gold/15' : 'bg-transparent backdrop-blur-none border-b border-transparent'
       }`}
     >
