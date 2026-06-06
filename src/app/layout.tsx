@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     'Soulogos is a Discord bot that brings tabletop RPG NPCs to life with AI-generated voices, deep character memory, and natural conversation. Built for Dungeon Masters. Powered by Claude AI and ElevenLabs.',
   metadataBase: new URL('https://soulogos.com'),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
+    ],
+  },
   openGraph: {
     title: 'Soulogos by Cognition & Chaos - Give Your NPCs a Voice',
     description:
