@@ -148,10 +148,28 @@ export function FeatureCard({
 export function WaitlistForm() {
   const [submitted, setSubmitted] = useState(false)
   const [email, setEmail] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (email.trim()) setSubmitted(true)
+    setLoading(true)
+    try {
+      const response = await fetch('https://formspree.io/f/mojzjlpg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -174,10 +192,16 @@ export function WaitlistForm() {
             type="submit"
             id="waitlist-submit-btn"
             suppressHydrationWarning
+            disabled={loading}
             className="w-full py-5 px-10 rounded-lg font-ui font-semibold tracking-widest uppercase bg-[linear-gradient(135deg,#C9A84C_0%,#E8C97A_50%,#C9A84C_100%)] bg-[length:200%_200%] text-void text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_4px_20px_rgba(201,168,76,0.3)]"
           >
-            Join the Waitlist
+            {loading ? 'Registering...' : 'Join the Waitlist'}
           </button>
+          {error && (
+            <p className="font-body text-red-400 text-base text-center">
+              Something went wrong. Please try again.
+            </p>
+          )}
         </form>
       ) : (
         <div
