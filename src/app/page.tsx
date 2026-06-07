@@ -105,7 +105,7 @@ function Step({
         </div>
         <div className="hidden md:block w-px flex-1 bg-gold/15 min-h-[60px]" />
       </div>
-      <div className="flex-1 pb-12">
+      <div className="flex-1 pb-8">
         <div className="flex items-center gap-3 mb-2">
           {icon}
           <h3 className="font-ui text-parchment text-xl font-semibold tracking-wide">{title}</h3>
@@ -214,7 +214,7 @@ export default function Home() {
 
           {/* Center/Bottom: Headline, body copy, and buttons */}
           <div className="max-w-3xl w-full mt-0 pb-0 pl-8">
-            <div className="overline mb-10 animate-[fade-up_0.6s_ease-out_forwards] delay-100">
+            <div className="overline mb-6 animate-[fade-up_0.6s_ease-out_forwards] delay-100">
               COMING SOON, v0.5 IN ACTIVE DEVELOPMENT
             </div>
 
@@ -262,7 +262,7 @@ export default function Home() {
       <section id="about" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
-          <ScrollReveal className="mb-16">
+          <ScrollReveal className="mb-10">
             <h2 className="section-heading">What Is Soulogos?</h2>
           </ScrollReveal>
 
@@ -314,7 +314,7 @@ export default function Home() {
           <ScrollReveal className="mb-2">
             <h2 className="section-heading">How It Works</h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.1} className="mb-16">
+          <ScrollReveal delay={0.1} className="mb-10">
             <p className="section-subheading">Three steps. No code required.</p>
           </ScrollReveal>
 
@@ -351,7 +351,7 @@ export default function Home() {
           <ScrollReveal className="mb-2">
             <h2 className="section-heading">Built for Real Campaigns</h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.1} className="mb-16">
+          <ScrollReveal delay={0.1} className="mb-10">
             <p className="section-subheading">Everything a DM actually needs</p>
           </ScrollReveal>
 
@@ -412,7 +412,7 @@ export default function Home() {
           <ScrollReveal className="mb-2">
             <h2 className="section-heading">The Soul Behind the Souls</h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.1} className="mb-16">
+          <ScrollReveal delay={0.1} className="mb-10">
             <p className="section-subheading">Every NPC starts in the Authoring Console.</p>
           </ScrollReveal>
 
@@ -451,7 +451,7 @@ export default function Home() {
       <section id="syrinscape" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
-          <ScrollReveal className="mb-16">
+          <ScrollReveal className="mb-10">
             <h2 className="section-heading">Set the Scene. Every Scene.</h2>
           </ScrollReveal>
 
@@ -490,7 +490,7 @@ export default function Home() {
       >
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
-          <ScrollReveal className="mb-16">
+          <ScrollReveal className="mb-10">
             <h2 className="section-heading">Built For</h2>
           </ScrollReveal>
 
@@ -520,7 +520,7 @@ export default function Home() {
           </ScrollReveal>
           
           <ScrollReveal delay={0.1}>
-            <div className="flex flex-wrap items-stretch justify-start gap-5 mb-8 mt-10">
+            <div className="flex flex-wrap items-stretch justify-start gap-5 mb-8 mt-6">
               <TechBadge name="Claude AI" desc="NPC reasoning & character voice" />
               <TechBadge name="ElevenLabs" desc="High-fidelity text-to-speech" />
               <TechBadge name="Syrinscape" desc="Live ambient audio integration" />
