@@ -215,7 +215,7 @@ export default function Home() {
           {/* Center/Bottom: Headline, body copy, and buttons */}
           <div className="max-w-3xl w-full mt-0 pb-0 pl-8">
             <div className="overline mb-6 animate-[fade-up_0.6s_ease-out_forwards] delay-100">
-              v0.6.0 SHIPPED — WAITLIST NOW OPEN
+              v0.7.1 SHIPPED — WAITLIST NOW OPEN
             </div>
 
             <h2 className="font-display text-parchment leading-tight mb-6 text-[clamp(2.4rem,5.4vw,4.08rem)] [text-shadow:0_0_60px_rgba(201,168,76,0.15)] animate-[fade-up_0.6s_ease-out_forwards] delay-200">
@@ -252,7 +252,7 @@ export default function Home() {
             </div>
 
             <p className="font-ui text-muted text-xs tracking-widest uppercase animate-[fade-up_0.6s_ease-out_forwards] delay-500">
-              Built for Dungeon Masters &nbsp;·&nbsp; Runs on Discord &nbsp;·&nbsp; v0.6.0 live with active campaigns
+              Built for Dungeon Masters &nbsp;·&nbsp; Runs on Discord &nbsp;·&nbsp; v0.7.1 live with active campaigns
             </p>
           </div>
         </div>
@@ -532,7 +532,7 @@ export default function Home() {
           <ScrollReveal delay={0.2}>
             <p className="font-ui text-gold text-sm tracking-widest uppercase mb-1">Built by a DM, for DMs</p>
             <p className="font-body text-muted text-base italic">
-              v0.6.0 shipped. Live with real campaigns. 1,625 tests passing.
+              v0.7.1 shipped. Live with real campaigns. 1,806 tests passing.
             </p>
           </ScrollReveal>
         </div>
