@@ -538,6 +538,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── SESSION TEASER ───────────────────────────────────────────── */}
+      <section id="session" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
+        <div className="max-w-7xl w-full mr-auto">
+          <GoldRule />
+          <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20 justify-between">
+            <div className="flex-1">
+              <ScrollReveal>
+                <div className="overline mb-6">THE COMPANION</div>
+              </ScrollReveal>
+              <div className="flex flex-col sm:flex-row gap-6 items-start">
+                <ScrollReveal delay={0.1} className="flex-shrink-0">
+                  <Image
+                    src="/session-logo.png"
+                    alt="Soulogos Session"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
+                </ScrollReveal>
+                <ScrollReveal delay={0.1} className="flex-1">
+                  <h2 className="section-heading mb-4">Soulogos speaks. Session listens.</h2>
+                  <p className="font-body text-muted max-w-xl text-[clamp(1.1rem,2vw,1.25rem)] leading-[1.8]">
+                    Your NPCs have voices. Now your table has a memory. Soulogos Session records every session, transcribes it locally, and hands you back a structured debrief and a player-facing recap automatically. No more scrambling to remember who promised what.
+                  </p>
+                </ScrollReveal>
+              </div>
+            </div>
+            <ScrollReveal delay={0.2} className="flex-shrink-0">
+              <a
+                href="/session"
+                className="inline-block font-ui tracking-widest uppercase text-base px-10 py-5 rounded-lg text-parchment border border-gold/40 transition-all duration-300 hover:border-gold hover:bg-gold/5 hover:scale-[1.03] active:scale-[0.98] whitespace-nowrap"
+              >
+                Explore Session
+              </a>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* ── WAITLIST CTA ─────────────────────────────────────────────── */}
       <section
         id="waitlist"

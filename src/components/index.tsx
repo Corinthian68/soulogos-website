@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 // ─── Arcane Sigil SVG ──────────────────────────────────────────────────────
 export function ArcaneSigil() {
@@ -382,6 +383,7 @@ export function SyrinscapeCueBoard() {
 // ─── Nav ────────────────────────────────────────────────────────────────────
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -396,51 +398,95 @@ export function Nav() {
       }`}
     >
       <div className="max-w-7xl w-full mr-auto flex items-center justify-between">
-        <div className={`flex items-center gap-3 transition-all duration-500 ${scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}>
-          <Image
-            src="/lantern-only.png"
-            alt="Soulogos Lantern Logo"
-            width={36}
-            height={36}
-            className="object-contain"
-            style={{ mixBlendMode: 'lighten' }}
-          />
-          <div className="flex flex-col">
-            <span className="font-display text-[#C9A84C] tracking-wide text-xl leading-none">
-              Soulogos
-            </span>
-            <span className="font-ui text-[#C9A84C] text-[9px] tracking-widest uppercase leading-none mt-1">
-              by Cognition &amp; Chaos
-            </span>
+        {pathname !== '/' && (
+          <a
+            href="/"
+            className="flex items-center gap-3 transition-all duration-300 hover:opacity-80"
+          >
+            <Image
+              src="/lantern-only.png"
+              alt="Soulogos Lantern Logo"
+              width={36}
+              height={36}
+              className="object-contain"
+              style={{ mixBlendMode: 'lighten' }}
+            />
+            <div className="flex flex-col">
+              <span className="font-display text-[#C9A84C] tracking-wide text-xl leading-none">
+                Soulogos
+              </span>
+              <span className="font-ui text-[#C9A84C] text-[9px] tracking-widest uppercase leading-none mt-1">
+                by Cognition &amp; Chaos
+              </span>
+            </div>
+          </a>
+        )}
+        {pathname === '/' && (
+          <div className={`flex items-center gap-3 transition-all duration-500 ${scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}>
+            <Image
+              src="/lantern-only.png"
+              alt="Soulogos Lantern Logo"
+              width={36}
+              height={36}
+              className="object-contain"
+              style={{ mixBlendMode: 'lighten' }}
+            />
+            <div className="flex flex-col">
+              <span className="font-display text-[#C9A84C] tracking-wide text-xl leading-none">
+                Soulogos
+              </span>
+              <span className="font-ui text-[#C9A84C] text-[9px] tracking-widest uppercase leading-none mt-1">
+                by Cognition &amp; Chaos
+              </span>
+            </div>
           </div>
-        </div>
+        )}
         
-        <a
-          href="#waitlist"
-          id="nav-join-waitlist-btn"
-          className="font-ui text-sm tracking-widest uppercase px-8 py-4 rounded border border-gold/60 text-gold transition-all duration-300 hover:bg-gold/10 hover:border-gold gold-pulse-btn lg:mr-[0.5in]"
-        >
-          Join Waitlist
-        </a>
+        <div className="flex items-center gap-6 lg:mr-[0.5in]">
+          {pathname === '/session' ? (
+            <span className="hidden md:block font-ui text-sm tracking-widest uppercase text-gold">
+              Session
+            </span>
+          ) : (
+            <a
+              href="/session"
+              className="hidden md:block font-ui text-sm tracking-widest uppercase text-[#C9A84C] hover:text-[#E8C97A] transition-colors duration-300"
+            >
+              Session
+            </a>
+          )}
+          <a
+            href="#waitlist"
+            id="nav-join-waitlist-btn"
+            className="font-ui text-sm tracking-widest uppercase px-8 py-4 rounded border border-gold/60 text-gold transition-all duration-300 hover:bg-gold/10 hover:border-gold gold-pulse-btn"
+          >
+            Join Waitlist
+          </a>
+        </div>
       </div>
     </nav>
   )
 }
 
 // ─── Arcane Scroll Tracker ──────────────────────────────────────────────────
-export function ScrollTracker() {
-  const [activeSection, setActiveSection] = useState('hero')
+const DEFAULT_SECTIONS = [
+  { id: 'hero', label: 'I. Summoning' },
+  { id: 'about', label: 'II. The Souls' },
+  { id: 'how-it-works', label: 'III. The Ritual' },
+  { id: 'features', label: 'IV. The Craft' },
+  { id: 'console', label: 'V. The Console' },
+  { id: 'syrinscape', label: 'VI. The Ambience' },
+  { id: 'who', label: 'VII. The Chosen' },
+  { id: 'waitlist', label: 'VIII. The Registry' },
+]
 
-  const sections = [
-    { id: 'hero', label: 'I. Summoning' },
-    { id: 'about', label: 'II. The Souls' },
-    { id: 'how-it-works', label: 'III. The Ritual' },
-    { id: 'features', label: 'IV. The Craft' },
-    { id: 'console', label: 'V. The Console' },
-    { id: 'syrinscape', label: 'VI. The Ambience' },
-    { id: 'who', label: 'VII. The Chosen' },
-    { id: 'waitlist', label: 'VIII. The Registry' },
-  ]
+export function ScrollTracker({
+  sections = DEFAULT_SECTIONS,
+}: {
+  sections?: Array<{ id: string; label: string }>
+} = {}) {
+  const [activeSection, setActiveSection] = useState(sections[0]?.id ?? 'hero')
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const observerOptions = {
@@ -479,8 +525,13 @@ export function ScrollTracker() {
       // Top of page: hero is active (mirrors the bottom fallback below).
       if (window.scrollY < 4) {
         setActiveSection(sections[0].id)
+        setVisible(false)
         return
       }
+      // Hide tracker until the user has scrolled past the hero section.
+      const heroEl = document.getElementById('hero')
+      const threshold = heroEl ? heroEl.offsetTop + heroEl.offsetHeight * 0.5 : 300
+      setVisible(window.scrollY > threshold)
       const scrolledToBottom =
         window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
       if (scrolledToBottom) setActiveSection(sections[sections.length - 1].id)
@@ -502,8 +553,8 @@ export function ScrollTracker() {
   }
 
   return (
-    <div 
-      className="arcanum-tracker fixed top-1/2 -translate-y-1/2 z-40 left-4 flex flex-col items-center gap-6"
+    <div
+      className={`arcanum-tracker fixed top-1/2 -translate-y-1/2 z-40 left-4 flex flex-col items-center gap-6 transition-opacity duration-500 ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       aria-label="Arcane Scroll Tracker"
     >
       {/* Tracker Line */}
