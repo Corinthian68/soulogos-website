@@ -283,7 +283,7 @@ export default function SetupPage() {
         className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center"
         aria-hidden="true"
       >
-        <div className="relative w-[600px] h-[600px] opacity-[0.04]">
+        <div className="relative w-[900px] h-[900px] opacity-[0.08]">
           <Image
             src="/lantern-only.png"
             alt=""
@@ -295,7 +295,7 @@ export default function SetupPage() {
       </div>
 
       {/* ── HEADER ─────────────────────────────────────────────────────── */}
-      <section className="relative z-10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-44 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]">
+      <section className="relative z-10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-56 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]">
         <div className="max-w-3xl">
           <div className="overline mb-5 animate-[fade-up_0.5s_ease-out_forwards]">Setup Guide</div>
           <h1
