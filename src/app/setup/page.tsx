@@ -280,14 +280,14 @@ export default function SetupPage() {
       {/* ── BACKGROUND LANTERN ─────────────────────────────────────────── */}
       {/* Anchored to top-right below the nav; object-contain keeps it fully in-frame */}
       <div
-        className="pointer-events-none fixed right-0 top-16 z-0 w-[700px] h-[700px] opacity-20"
+        className="pointer-events-none fixed right-0 top-16 z-0 w-[550px] h-[550px] opacity-20"
         aria-hidden="true"
       >
         <Image
           src="/lantern-only.png"
           alt=""
           fill
-          sizes="700px"
+          sizes="550px"
           className="object-contain object-right-top"
         />
       </div>
@@ -309,8 +309,8 @@ export default function SetupPage() {
         Left padding matches the arcanum-section gutter values explicitly.
       */}
       <section
-        className="relative z-10 md:pl-20 lg:pl-24 xl:pl-32 pr-8 md:pr-16 lg:pr-24 xl:pr-32 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]"
-        style={{ paddingTop: '120px', paddingLeft: '1.5rem' }}
+        className="relative z-10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]"
+        style={{ paddingTop: '120px' }}
       >
         <div className="max-w-3xl">
           <div className="overline mb-5 animate-[fade-up_0.5s_ease-out_forwards]">Setup Guide</div>
