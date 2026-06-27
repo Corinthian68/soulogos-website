@@ -23,7 +23,7 @@ function CheckItem({ children }: { children: React.ReactNode }) {
           <path d="M1 4L3.5 6.5L9 1" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </span>
-      <span className="font-body text-parchment text-lg leading-snug">{children}</span>
+      <span className="font-body text-parchment text-lg leading-relaxed">{children}</span>
     </li>
   )
 }
@@ -36,7 +36,7 @@ function ScreenBadge({ n, label }: { n: string; label: string }) {
       <span className="flex-shrink-0 w-8 h-8 rounded-full border border-gold/40 flex items-center justify-center font-ui text-gold text-xs tracking-widest">
         {n}
       </span>
-      <span className="font-body text-parchment text-lg">{label}</span>
+      <span className="font-body text-parchment text-lg leading-relaxed">{label}</span>
     </div>
   )
 }
@@ -61,7 +61,7 @@ const STEPS: StepData[] = [
             <span>
               <span className="text-gold font-ui text-sm tracking-widest uppercase">Discord Bot Token</span>
               <br />
-              <span className="text-muted text-base">
+              <span className="text-muted text-base leading-relaxed">
                 From the{' '}
                 <a
                   href="https://discord.com/developers/applications"
@@ -79,7 +79,7 @@ const STEPS: StepData[] = [
             <span>
               <span className="text-gold font-ui text-sm tracking-widest uppercase">AI Provider Key</span>
               <br />
-              <span className="text-muted text-base">
+              <span className="text-muted text-base leading-relaxed">
                 Anthropic, OpenAI, or Google Gemini — one is enough. Anthropic Claude is
                 recommended for NPC depth and consistency.
               </span>
@@ -89,7 +89,7 @@ const STEPS: StepData[] = [
             <span>
               <span className="text-gold font-ui text-sm tracking-widest uppercase">ElevenLabs API Key</span>
               <br />
-              <span className="text-muted text-base">
+              <span className="text-muted text-base leading-relaxed">
                 Required for NPC voice. The Creator plan ($22/month) covers a full campaign's
                 worth of TTS. Text-only mode works without it.
               </span>
@@ -100,7 +100,7 @@ const STEPS: StepData[] = [
               <span className="text-gold font-ui text-sm tracking-widest uppercase">Discord Server ID</span>
               <span className="font-body text-muted text-sm ml-2 italic">(recommended)</span>
               <br />
-              <span className="text-muted text-base">
+              <span className="text-muted text-base leading-relaxed">
                 Your Guild ID. Enable Developer Mode in Discord, right-click your server, and
                 copy the ID. The setup wizard will prompt for this.
               </span>
@@ -108,7 +108,7 @@ const STEPS: StepData[] = [
           </CheckItem>
         </ul>
 
-        <p className="font-body text-muted text-base italic">
+        <p className="font-body text-muted text-base leading-relaxed italic">
           The setup wizard accepts all four keys step by step. You do not need to write anything
           to a config file by hand.
         </p>
@@ -152,7 +152,7 @@ const STEPS: StepData[] = [
               <span>
                 <span className="font-ui text-parchment text-sm tracking-wide uppercase">{title}</span>
                 <br />
-                <span className="font-body text-muted text-base">{desc}</span>
+                <span className="font-body text-muted text-base leading-relaxed">{desc}</span>
               </span>
             </li>
           ))}
@@ -160,7 +160,7 @@ const STEPS: StepData[] = [
 
         <div className="rounded-lg border border-gold/15 bg-navy/40 px-6 py-5">
           <p className="font-ui text-gold text-xs tracking-widest uppercase mb-1">Windows SmartScreen</p>
-          <p className="font-body text-muted text-base">
+          <p className="font-body text-muted text-base leading-relaxed">
             If Windows Defender prompts you, click <em className="text-parchment">More info</em> then{' '}
             <em className="text-parchment">Run anyway</em>. The executable is unsigned during early
             access; code signing ships with v1.0.
@@ -277,8 +277,25 @@ export default function SetupPage() {
     <>
       <Nav />
 
+      {/* ── BACKGROUND LANTERN ─────────────────────────────────────────── */}
+      {/* Fixed behind all content, same low-opacity lantern technique as the site hero */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center"
+        aria-hidden="true"
+      >
+        <div className="relative w-[600px] h-[600px] opacity-[0.04]">
+          <Image
+            src="/lantern-only.png"
+            alt=""
+            fill
+            sizes="600px"
+            className="object-contain"
+          />
+        </div>
+      </div>
+
       {/* ── HEADER ─────────────────────────────────────────────────────── */}
-      <section className="arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-36 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]">
+      <section className="relative z-10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-44 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]">
         <div className="max-w-3xl">
           <div className="overline mb-5 animate-[fade-up_0.5s_ease-out_forwards]">Setup Guide</div>
           <h1
@@ -295,7 +312,7 @@ export default function SetupPage() {
       </section>
 
       {/* ── STEP TABS ──────────────────────────────────────────────────── */}
-      <section className="arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pb-32">
+      <section className="relative z-10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pb-32">
         <div className="max-w-3xl">
 
           {/* Tab row */}
@@ -380,7 +397,7 @@ export default function SetupPage() {
       </section>
 
       {/* ── FOOTER ─────────────────────────────────────────────────────── */}
-      <footer className="border-t border-gold/10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-12 pb-12 text-left bg-[#050709]">
+      <footer className="relative z-10 border-t border-gold/10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-12 pb-12 text-left bg-[#050709]">
         <div className="max-w-7xl w-full mr-auto flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
             <a href="/" className="mb-4 flex items-center gap-3 w-fit hover:opacity-80 transition-opacity">
