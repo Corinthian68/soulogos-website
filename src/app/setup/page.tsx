@@ -278,20 +278,28 @@ export default function SetupPage() {
       <Nav />
 
       {/* ── BACKGROUND LANTERN ─────────────────────────────────────────── */}
-      {/* Upper-right, low opacity — atmosphere without competing with left-aligned text */}
+      {/* Anchored to top-right below the nav; object-contain keeps it fully in-frame */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 flex items-start justify-end"
+        className="pointer-events-none fixed right-0 top-16 z-0 w-[700px] h-[700px] opacity-20"
         aria-hidden="true"
       >
-        <div className="relative w-[700px] h-[700px] opacity-20">
-          <Image
-            src="/lantern-only.png"
-            alt=""
-            fill
-            sizes="700px"
-            className="object-contain"
-          />
-        </div>
+        <Image
+          src="/lantern-only.png"
+          alt=""
+          fill
+          sizes="700px"
+          className="object-contain object-right-top"
+        />
+      </div>
+
+      {/* ── SCROLL DOTS ─────────────────────────────────────────────────── */}
+      <div
+        className="pointer-events-none fixed left-6 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center"
+        aria-hidden="true"
+      >
+        <div className="w-2 h-2 rounded-full bg-gold" />
+        <div className="w-px h-16 bg-gold/20" />
+        <div className="w-2 h-2 rounded-full bg-gold/20" />
       </div>
 
       {/* ── HEADER ─────────────────────────────────────────────────────── */}
@@ -301,10 +309,10 @@ export default function SetupPage() {
         Left padding matches the arcanum-section gutter values explicitly.
       */}
       <section
-        className="relative z-10 pr-8 md:pr-16 lg:pr-24 xl:pr-32 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]"
-        style={{ paddingTop: '120px' }}
+        className="relative z-10 md:pl-20 lg:pl-24 xl:pl-32 pr-8 md:pr-16 lg:pr-24 xl:pr-32 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]"
+        style={{ paddingTop: '120px', paddingLeft: '1.5rem' }}
       >
-        <div className="max-w-3xl pl-6 md:pl-20 lg:pl-24 xl:pl-32">
+        <div className="max-w-3xl">
           <div className="overline mb-5 animate-[fade-up_0.5s_ease-out_forwards]">Setup Guide</div>
           <h1
             className="font-display text-parchment leading-tight mb-6 text-[clamp(2rem,4.5vw,3.4rem)] [text-shadow:0_0_60px_rgba(201,168,76,0.12)] animate-[fade-up_0.5s_ease-out_0.1s_both]"
