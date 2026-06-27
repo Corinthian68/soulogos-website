@@ -277,6 +277,9 @@ export default function SetupPage() {
     <>
       <Nav />
 
+      {/* Hard spacer that clears the fixed nav regardless of arcanum-section padding */}
+      <div className="h-24" aria-hidden="true" />
+
       {/* ── BACKGROUND LANTERN ─────────────────────────────────────────── */}
       {/* Fixed behind all content, same low-opacity lantern technique as the site hero */}
       <div
@@ -295,7 +298,7 @@ export default function SetupPage() {
       </div>
 
       {/* ── HEADER ─────────────────────────────────────────────────────── */}
-      <section className="relative z-10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-56 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]">
+      <section className="relative z-10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-8 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]">
         <div className="max-w-3xl">
           <div className="overline mb-5 animate-[fade-up_0.5s_ease-out_forwards]">Setup Guide</div>
           <h1
