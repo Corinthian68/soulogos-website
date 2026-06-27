@@ -277,29 +277,34 @@ export default function SetupPage() {
     <>
       <Nav />
 
-      {/* Hard spacer that clears the fixed nav regardless of arcanum-section padding */}
-      <div className="h-24" aria-hidden="true" />
-
       {/* ── BACKGROUND LANTERN ─────────────────────────────────────────── */}
-      {/* Fixed behind all content, same low-opacity lantern technique as the site hero */}
+      {/* Upper-right, low opacity — atmosphere without competing with left-aligned text */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center"
+        className="pointer-events-none fixed inset-0 z-0 flex items-start justify-end"
         aria-hidden="true"
       >
-        <div className="relative w-[900px] h-[900px] opacity-[0.08]">
+        <div className="relative w-[700px] h-[700px] opacity-20">
           <Image
             src="/lantern-only.png"
             alt=""
             fill
-            sizes="600px"
+            sizes="700px"
             className="object-contain"
           />
         </div>
       </div>
 
       {/* ── HEADER ─────────────────────────────────────────────────────── */}
-      <section className="relative z-10 arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pt-8 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]">
-        <div className="max-w-3xl">
+      {/*
+        Inline paddingTop bypasses Tailwind layer cascade vs. the arcanum-section
+        !important conflict. Nav is fixed at 68px tall; 120px puts the heading 52px below it.
+        Left padding matches the arcanum-section gutter values explicitly.
+      */}
+      <section
+        className="relative z-10 pr-8 md:pr-16 lg:pr-24 xl:pr-32 pb-16 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(201,168,76,0.05)_0%,transparent_70%)]"
+        style={{ paddingTop: '120px' }}
+      >
+        <div className="max-w-3xl pl-6 md:pl-20 lg:pl-24 xl:pl-32">
           <div className="overline mb-5 animate-[fade-up_0.5s_ease-out_forwards]">Setup Guide</div>
           <h1
             className="font-display text-parchment leading-tight mb-6 text-[clamp(2rem,4.5vw,3.4rem)] [text-shadow:0_0_60px_rgba(201,168,76,0.12)] animate-[fade-up_0.5s_ease-out_0.1s_both]"
