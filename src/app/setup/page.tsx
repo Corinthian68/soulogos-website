@@ -280,14 +280,14 @@ export default function SetupPage() {
       {/* ── BACKGROUND LANTERN ─────────────────────────────────────────── */}
       {/* Anchored to top-right below the nav; object-contain keeps it fully in-frame */}
       <div
-        className="pointer-events-none fixed right-0 top-16 z-0 w-[550px] h-[550px] opacity-20"
+        className="pointer-events-none fixed right-0 top-12 z-0 w-[500px] h-[500px]"
         aria-hidden="true"
       >
         <Image
           src="/lantern-only.png"
           alt=""
           fill
-          sizes="550px"
+          sizes="500px"
           className="object-contain object-right-top"
         />
       </div>
