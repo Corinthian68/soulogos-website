@@ -249,6 +249,13 @@ export default function Home() {
                 <DiscordIcon size={16} />
                 Join Our Discord
               </a>
+              <a
+                href="/setup"
+                id="hero-setup-btn"
+                className="font-ui tracking-widest uppercase text-base px-10 py-5 rounded-lg text-parchment border border-gold/40 transition-all duration-300 hover:border-gold hover:bg-gold/5 hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center"
+              >
+                Get Started
+              </a>
             </div>
 
             <p className="font-ui text-muted text-xs tracking-widest uppercase animate-[fade-up_0.6s_ease-out_forwards] delay-500">

@@ -233,6 +233,12 @@ export default function SessionPage() {
             >
               Get the Bundle
             </a>
+            <a
+              href="/setup"
+              className="font-ui tracking-widest uppercase text-base px-10 py-5 rounded-lg text-parchment border border-gold/40 transition-all duration-300 hover:border-gold hover:bg-gold/5 hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center"
+            >
+              Get Started
+            </a>
           </div>
         </div>
       </section>
