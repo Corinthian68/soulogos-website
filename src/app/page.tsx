@@ -539,7 +539,7 @@ export default function Home() {
           <ScrollReveal delay={0.2}>
             <p className="font-ui text-gold text-sm tracking-widest uppercase mb-1">Built by a DM, for DMs</p>
             <p className="font-body text-muted text-base italic">
-              v0.9.0 shipped. Windows installer live. 1,806 tests passing.
+              v0.9.0 shipped. Windows installer live. 1,772 tests passing.
             </p>
           </ScrollReveal>
         </div>
