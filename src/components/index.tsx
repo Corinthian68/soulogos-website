@@ -455,6 +455,18 @@ export function Nav() {
               Session
             </a>
           )}
+          {pathname === '/pricing' ? (
+            <span className="hidden md:block font-ui text-sm tracking-widest uppercase text-gold">
+              Pricing
+            </span>
+          ) : (
+            <a
+              href="/pricing"
+              className="hidden md:block font-ui text-sm tracking-widest uppercase text-[#C9A84C] hover:text-[#E8C97A] transition-colors duration-300"
+            >
+              Pricing
+            </a>
+          )}
           <a
             href="#waitlist"
             id="nav-join-waitlist-btn"
