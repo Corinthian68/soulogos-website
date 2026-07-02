@@ -309,12 +309,6 @@ export default function Home() {
                 your table.
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={0.8}>
-              <p className="font-body text-muted text-lg leading-relaxed">
-                Soulogos runs on your hardware, not ours. We have no servers. The AI providers you
-                connect are your choice, the same infrastructure you already use every day.
-              </p>
-            </ScrollReveal>
           </div>
         </div>
       </section>
