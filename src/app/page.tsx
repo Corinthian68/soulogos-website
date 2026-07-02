@@ -265,6 +265,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PHILOSOPHY ───────────────────────────────────────────────── */}
+      <section id="philosophy" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 w-full">
+        <div className="max-w-7xl w-full mr-auto">
+          <GoldRule />
+          <ScrollReveal delay={0.1} className="mb-2">
+            <div className="overline mb-2">The DM is Still You</div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2} className="mb-10">
+            <h2 className="section-heading">Your Story. Your NPCs. Your Table.</h2>
+          </ScrollReveal>
+
+          <div className="max-w-2xl flex flex-col gap-6">
+            <ScrollReveal delay={0.3}>
+              <p className="font-body text-muted text-lg leading-relaxed">
+                AI did not write your campaign. You did.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.4}>
+              <p className="font-body text-muted text-lg leading-relaxed">
+                Soulogos does not generate your plot, invent your characters, or decide what happens next.
+                You still do all of that. You write every Soul file. You define every NPC&apos;s history,
+                personality, motivations, and secrets. You plan every session and control every beat.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.5}>
+              <p className="font-body text-muted text-lg leading-relaxed">
+                What Soulogos does is free you from performing. Running six distinct NPC voices while
+                tracking initiative, managing the map, and keeping six players engaged is a performance
+                tax that pulls you out of the story. Soulogos pays that tax so you can stay at the table.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.6}>
+              <p className="font-body text-muted text-lg leading-relaxed">
+                The craft is yours. The creativity is yours. The story is yours. Soulogos just makes
+                sure your players hear it the way you intended.
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* ── WHAT IS SOULOGOS ──────────────────────────────────────────── */}
       <section id="about" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 w-full">
         <div className="max-w-7xl w-full mr-auto">

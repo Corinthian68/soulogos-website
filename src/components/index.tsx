@@ -483,13 +483,14 @@ export function Nav() {
 // ─── Arcane Scroll Tracker ──────────────────────────────────────────────────
 const DEFAULT_SECTIONS = [
   { id: 'hero', label: 'I. Summoning' },
-  { id: 'about', label: 'II. The Souls' },
-  { id: 'how-it-works', label: 'III. The Ritual' },
-  { id: 'features', label: 'IV. The Craft' },
-  { id: 'console', label: 'V. The Console' },
-  { id: 'syrinscape', label: 'VI. The Ambience' },
-  { id: 'who', label: 'VII. The Chosen' },
-  { id: 'waitlist', label: 'VIII. The Registry' },
+  { id: 'philosophy', label: 'II. The Craft' },
+  { id: 'about', label: 'III. The Souls' },
+  { id: 'how-it-works', label: 'IV. The Ritual' },
+  { id: 'features', label: 'V. The Craft' },
+  { id: 'console', label: 'VI. The Console' },
+  { id: 'syrinscape', label: 'VII. The Ambience' },
+  { id: 'who', label: 'VIII. The Chosen' },
+  { id: 'waitlist', label: 'IX. The Registry' },
 ]
 
 export function ScrollTracker({
