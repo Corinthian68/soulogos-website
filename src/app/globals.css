@@ -201,19 +201,19 @@ body::before {
 
 @media (min-width: 1280px) {
   .arcanum-section {
-    padding-left: 8rem !important; /* 128px */
+    padding-left: 5rem !important; /* 80px */
   }
   .arcanum-tracker {
-    left: 2.75rem !important; /* 44px - centers in 128px gutter */
+    left: 1.75rem !important; /* 28px - centers in 80px gutter */
   }
 }
 
 @media (min-width: 1536px) {
   .arcanum-section {
-    padding-left: 10rem !important; /* 160px */
+    padding-left: 6rem !important; /* 96px */
   }
   .arcanum-tracker {
-    left: 3.5rem !important; /* 56px - centers in 160px gutter */
+    left: 2rem !important; /* 32px - centers in 96px gutter */
   }
 }
 
