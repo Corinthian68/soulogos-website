@@ -302,6 +302,19 @@ export default function Home() {
                 sure your players hear it the way you intended.
               </p>
             </ScrollReveal>
+            <ScrollReveal delay={0.7}>
+              <p className="font-body text-muted text-lg leading-relaxed">
+                Your campaign data stays on your machine. Session transcripts, NPC conversations,
+                player names, homebrew lore, none of it passes through our servers. We never see
+                your table.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.8}>
+              <p className="font-body text-muted text-lg leading-relaxed">
+                We think about the footprint of these tools. Self-hosted means your sessions run on
+                your hardware, not a data center.
+              </p>
+            </ScrollReveal>
           </div>
         </div>
       </section>

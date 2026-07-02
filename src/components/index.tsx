@@ -106,6 +106,8 @@ export function ScrollReveal({
     0.4: 'delay-400',
     0.5: 'delay-500',
     0.6: 'delay-600',
+    0.7: 'delay-700',
+    0.8: 'delay-800',
   }
   
   const delayClass = delayMap[delay] || 'delay-0'
