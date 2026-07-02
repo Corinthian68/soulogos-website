@@ -284,7 +284,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── PRICING CARDS ─────────────────────────────────────────────── */}
-      <section id="pricing" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pb-16 w-full">
+      <section id="pricing" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 pb-10 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <PricingCard
@@ -358,7 +358,7 @@ export default function PricingPage() {
       {/* ── SOUL PACKS ────────────────────────────────────────────────── */}
       <section
         id="packs"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
@@ -401,7 +401,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── API COSTS ─────────────────────────────────────────────────── */}
-      <section id="api-costs" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full">
+      <section id="api-costs" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
@@ -433,7 +433,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
-      <section id="faq" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full">
+      <section id="faq" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-10">
@@ -459,7 +459,7 @@ export default function PricingPage() {
       {/* ── BOTTOM CTA ────────────────────────────────────────────────── */}
       <section
         id="cta"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto">
           <ScrollReveal>

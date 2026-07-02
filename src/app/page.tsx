@@ -266,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* ── WHAT IS SOULOGOS ──────────────────────────────────────────── */}
-      <section id="about" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full">
+      <section id="about" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-10">
@@ -315,7 +315,7 @@ export default function Home() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────────────────── */}
-      <section id="how-it-works" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
+      <section id="how-it-works" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
@@ -352,7 +352,7 @@ export default function Home() {
       </section>
 
       {/* ── FEATURE DEEP DIVE ────────────────────────────────────────── */}
-      <section id="features" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full">
+      <section id="features" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
@@ -412,7 +412,7 @@ export default function Home() {
       {/* ── AUTHORING CONSOLE ────────────────────────────────────────── */}
       <section
         id="console"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
@@ -455,7 +455,7 @@ export default function Home() {
       </section>
 
       {/* ── SYRINSCAPE INTEGRATION ───────────────────────────────────── */}
-      <section id="syrinscape" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full">
+      <section id="syrinscape" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-10">
@@ -493,7 +493,7 @@ export default function Home() {
       {/* ── WHO IS THIS FOR ───────────────────────────────────────────── */}
       <section
         id="who"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_60%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
@@ -519,7 +519,7 @@ export default function Home() {
       </section>
 
       {/* ── TECH STRIP ───────────────────────────────────────────────── */}
-      <section id="tech" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full">
+      <section id="tech" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
@@ -546,7 +546,7 @@ export default function Home() {
       </section>
 
       {/* ── SESSION TEASER ───────────────────────────────────────────── */}
-      <section id="session" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
+      <section id="session" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-20 justify-between">
@@ -587,7 +587,7 @@ export default function Home() {
       {/* ── WAITLIST CTA ─────────────────────────────────────────────── */}
       <section
         id="waitlist"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-10 overflow-hidden text-left bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1">
