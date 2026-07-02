@@ -244,7 +244,7 @@ export default function SessionPage() {
       </section>
 
       {/* ── THE PROBLEM ───────────────────────────────────────────────── */}
-      <section id="problem" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
+      <section id="problem" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-10">
@@ -264,7 +264,7 @@ export default function SessionPage() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────────────────── */}
-      <section id="how-it-works" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
+      <section id="how-it-works" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-10">
@@ -298,7 +298,7 @@ export default function SessionPage() {
       </section>
 
       {/* ── THE TWO OUTPUTS ───────────────────────────────────────────── */}
-      <section id="outputs" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
+      <section id="outputs" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-10">
@@ -332,7 +332,7 @@ export default function SessionPage() {
       </section>
 
       {/* ── PRIVACY ───────────────────────────────────────────────────── */}
-      <section id="privacy" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
+      <section id="privacy" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-10">
@@ -354,7 +354,7 @@ export default function SessionPage() {
       </section>
 
       {/* ── FEATURE LIST ──────────────────────────────────────────────── */}
-      <section id="features" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
+      <section id="features" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-10">
@@ -403,7 +403,7 @@ export default function SessionPage() {
       </section>
 
       {/* ── CROSS-SELL ────────────────────────────────────────────────── */}
-      <section id="crosssell" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
+      <section id="crosssell" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 bg-[linear-gradient(180deg,#0A0D14_0%,#0F1520_50%,#0A0D14_100%)]">
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-10">
@@ -437,7 +437,7 @@ export default function SessionPage() {
       {/* ── PRICING CTA ───────────────────────────────────────────────── */}
       <section
         id="pricing"
-        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full overflow-hidden bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
+        className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-16 w-full overflow-hidden bg-[radial-gradient(ellipse_70%_60%_at_30%_50%,rgba(201,168,76,0.06)_0%,rgba(15,21,32,0.8)_50%,#0A0D14_100%)]"
       >
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
