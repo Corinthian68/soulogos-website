@@ -311,8 +311,8 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal delay={0.8}>
               <p className="font-body text-muted text-lg leading-relaxed">
-                We think about the footprint of these tools. Self-hosted means your sessions run on
-                your hardware, not a data center.
+                Soulogos runs on your hardware, not ours. We have no servers. The AI providers you
+                connect are your choice, the same infrastructure you already use every day.
               </p>
             </ScrollReveal>
           </div>
