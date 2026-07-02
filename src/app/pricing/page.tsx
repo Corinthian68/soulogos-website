@@ -405,13 +405,30 @@ export default function PricingPage() {
         <div className="max-w-7xl w-full mr-auto">
           <GoldRule />
           <ScrollReveal className="mb-2">
-            <h2 className="section-heading">What APIs Will I Need?</h2>
+            <h2 className="section-heading">
+              What <span className="font-body">APIs</span> Will I Need?
+            </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.1} className="mb-10">
             <p className="font-body text-muted text-lg leading-relaxed max-w-2xl mt-4">
               Soulogos is self-hosted. You bring your own API keys. These are the third-party
               services required and what they typically cost for a weekly home game.
             </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.15} className="mb-12">
+            <div className="p-8 rounded-lg border border-gold/20 bg-navy/40">
+              <p className="font-ui text-gold text-xs tracking-widest uppercase mb-4">
+                Required for both products
+              </p>
+              <div className="flex items-center gap-4 flex-wrap">
+                <span className="font-body text-parchment text-sm">Discord</span>
+                <StatusBadge status="Free" />
+                <span className="font-body text-muted text-sm">
+                  No account cost. Bot runs inside your existing Discord server.
+                </span>
+              </div>
+            </div>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
