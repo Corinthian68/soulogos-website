@@ -89,6 +89,99 @@ function PricingCard({
   )
 }
 
+// ─── API cost table ───────────────────────────────────────────────────────────
+type ApiRow = {
+  service: string
+  detail: string
+  status: 'Required' | 'Optional' | 'Free'
+  cost: string
+  note: string
+}
+
+function StatusBadge({ status }: { status: ApiRow['status'] }) {
+  const styles = {
+    Required: 'border-gold/40 text-gold',
+    Optional: 'border-gold/20 text-muted',
+    Free: 'border-green-400/40 text-green-400',
+  }
+  return (
+    <span className={`inline-block font-ui text-xs tracking-wide rounded px-2 py-0.5 border ${styles[status]}`}>
+      {status}
+    </span>
+  )
+}
+
+function ApiTable({ title, rows }: { title: string; rows: ApiRow[] }) {
+  return (
+    <div className="p-8 rounded-lg border border-gold/20 bg-navy/40">
+      <h3 className="font-ui text-parchment text-lg font-semibold tracking-wide mb-6">{title}</h3>
+      <table className="w-full">
+        <thead>
+          <tr className="border-b border-gold/10">
+            <th className="font-ui text-gold text-xs tracking-widest uppercase text-left pb-3 pr-2">Service</th>
+            <th className="font-ui text-gold text-xs tracking-widest uppercase text-left pb-3 pr-2">Model</th>
+            <th className="font-ui text-gold text-xs tracking-widest uppercase text-left pb-3 pr-2">Status</th>
+            <th className="font-ui text-gold text-xs tracking-widest uppercase text-left pb-3">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.service} className="border-b border-gold/10 align-top">
+              <td className="font-body text-parchment text-sm py-4 pr-2">{row.service}</td>
+              <td className="font-body text-muted text-sm py-4 pr-2">{row.detail}</td>
+              <td className="py-4 pr-2">
+                <StatusBadge status={row.status} />
+              </td>
+              <td className="font-body text-muted text-sm py-4">{row.cost}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <ul className="flex flex-col gap-3 mt-6">
+        {rows.map((row) => (
+          <li key={row.service} className="font-body text-muted text-sm italic leading-relaxed">
+            <span className="text-parchment not-italic">{row.service}:</span> {row.note}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+const SOULOGOS_API_ROWS: ApiRow[] = [
+  {
+    service: 'ElevenLabs TTS',
+    detail: 'eleven_v3',
+    status: 'Required',
+    cost: 'Creator plan $22/mo',
+    note: '~121K chars/mo included. A heavy session uses ~75K chars.',
+  },
+  {
+    service: 'LLM Provider',
+    detail: 'Pick one',
+    status: 'Required',
+    cost: '$5-15/mo typical',
+    note: 'OpenAI, Anthropic, or Google Gemini. Weekly home game runs under $1/session.',
+  },
+]
+
+const SESSION_API_ROWS: ApiRow[] = [
+  {
+    service: 'faster-whisper',
+    detail: 'Local CPU',
+    status: 'Free',
+    cost: 'No key needed',
+    note: 'Fully local. Included with install.',
+  },
+  {
+    service: 'AssemblyAI',
+    detail: 'Universal-2',
+    status: 'Optional',
+    cost: 'Free tier: 100 hrs/mo',
+    note: 'Best accuracy. Free tier covers most home games. Paid $0.37/hr after.',
+  },
+]
+
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
 const FAQS = [
   {
@@ -303,6 +396,38 @@ export default function PricingPage() {
 
           <ScrollReveal delay={0.3}>
             <p className="font-body text-muted text-sm italic mt-8">More packs in development.</p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── API COSTS ─────────────────────────────────────────────────── */}
+      <section id="api-costs" className="relative arcanum-section pr-8 md:pr-16 lg:pr-24 xl:pr-32 py-32 w-full">
+        <div className="max-w-7xl w-full mr-auto">
+          <GoldRule />
+          <ScrollReveal className="mb-2">
+            <h2 className="section-heading">What APIs Will I Need?</h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1} className="mb-10">
+            <p className="font-body text-muted text-lg leading-relaxed max-w-2xl mt-4">
+              Soulogos is self-hosted. You bring your own API keys. These are the third-party
+              services required and what they typically cost for a weekly home game.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <ScrollReveal delay={0.2}>
+              <ApiTable title="Soulogos -- NPC Voice Engine" rows={SOULOGOS_API_ROWS} />
+            </ScrollReveal>
+            <ScrollReveal delay={0.3}>
+              <ApiTable title="Soulogos Session -- Transcription" rows={SESSION_API_ROWS} />
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal delay={0.4}>
+            <p className="font-body text-muted text-sm italic mt-8">
+              API costs are controlled entirely by you. Use lighter models or fewer echo blocks
+              to reduce spend. A typical 4-hour session costs $5-15 depending on NPC voice volume.
+            </p>
           </ScrollReveal>
         </div>
       </section>
