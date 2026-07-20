@@ -470,6 +470,14 @@ export function Nav() {
             </a>
           )}
           <a
+            href="https://sage.soulogos.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:block font-ui text-sm tracking-widest uppercase text-[#C9A84C] hover:text-[#E8C97A] transition-colors duration-300"
+          >
+            Sage
+          </a>
+          <a
             href="#waitlist"
             id="nav-join-waitlist-btn"
             className="font-ui text-sm tracking-widest uppercase px-8 py-4 rounded border border-gold/60 text-gold transition-all duration-300 hover:bg-gold/10 hover:border-gold gold-pulse-btn"
